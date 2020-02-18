@@ -26,3 +26,26 @@
   font-style: italic;
   font-weight: bold;
 }
+
+.style-text-0{
+  color: red;
+  letter-spacing: 10px;
+  text-align: left;
+  text-indent: 50px;
+  text-decoration: underline;
+  text-decoration-color: blue;
+  line-height: 30px;
+  white-space: normal;
+}
+
+.style-text-1{
+  text-align: justify;
+  word-spacing: 20px;
+  text-transform: uppercase;
+  white-space: pre-wrap;
+}
+
+.style-images-icons8{
+  width: 64px;
+  height: 64px;
+}
