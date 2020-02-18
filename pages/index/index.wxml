@@ -20,9 +20,29 @@
   </view>
 </view>
 <!-- 音频和图片 -->
-<view class="box">
+<!-- 已经隐藏 -->
+<view class="box" hidden>
   <view class="title">小猫（图片和声音）</view>
   <view >
   <image src="{{imgSrc}}" bindtap="tapCat"></image>
   </view>
+</view>
+<!-- 作业部分 -->
+<!-- 展示个人信息 -->
+<!-- 已经隐藏 -->
+<view hidden>
+  <view style='color:red; font-size:30px'>无名之辈的个人介绍</view>
+  <view class="style-introduce">
+  学校:HDU
+  班级:1111
+  姓名:无名之辈
+  籍贯：hebei
+  </view>
+</view>
+<!-- 盒模型练习 -->
+<view>
+    <view class="title">盒模型练习</view>
+    <view class="style-box-m1">盒子一盒子一盒子一盒子一盒子一盒子一</view>
+    <view class="style-box-m2">盒子二盒子二盒子二盒子二盒子二盒子二</view>
+    <view class="style-box-m3">盒子三盒子三盒子三盒子三盒子三盒子三</view>
 </view>
