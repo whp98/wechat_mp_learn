@@ -1,3 +1,7 @@
+
+<view hidden>
+    <view class="title">Hello Wechat!</view>
+</view>
 <!-- 已经隐藏 -->
 <view class="box" hidden>
   <view class="title">Hello Wechect</view>
@@ -8,7 +12,7 @@
   ==========
   <view class="font-style-view">
     <view>class 设置字体样式</view>
-    <view>字体：self-serif，30像素</view>
+    <view>字体：Cursive，25像素,倾斜，加粗</view>
   </view>
 </view>
 <!-- 已经隐藏 -->
@@ -40,9 +44,37 @@
   </view>
 </view>
 <!-- 盒模型练习 -->
-<view>
+<!-- 隐藏了 -->
+<view hidden>
     <view class="title">盒模型练习</view>
     <view class="style-box-m1">盒子一盒子一盒子一盒子一盒子一盒子一</view>
     <view class="style-box-m2">盒子二盒子二盒子二盒子二盒子二盒子二</view>
     <view class="style-box-m3">盒子三盒子三盒子三盒子三盒子三盒子三</view>
+</view>
+
+<view class="box" hidden>
+    <view class="title">布局示例</view>
+    三栏水平布局
+    <!-- 默认是水平布局 -->
+    <view style="display:flex;height:300rpx;text-align:center;">
+    <view style="background-color:red;flex-grow:1;">1</view>
+    <view style="background-color:blue;flex-grow:1;">2</view>
+    <view style="background-color:green;flex-grow:1;">3</view>
+</view>
+    左右混合布局
+    <view style="display:flex;height:300rpx;text-align:center;">
+        <view style="background-color:red;width:250rpx;line-height:300rpx">1</view>
+        <view style="display:flex;flex-direction:column;flex-grow:1;line-height:150rpx;">
+            <view style="background-color:green;flex-grow:1;">2</view>
+            <view style="background-color:blue;flex-grow:1;">3</view>
+        </view>
+    </view>
+    实现上下混合布局
+    <view style="display:flex;flex-direction:column;line-height:300rpx;text-align:center">
+        <view style="background-color:blue;height:200rpx;line-height:200rpx;">1</view>
+        <view style="display:flex;flex-direction:row;flex-grow:1">
+            <view style="background-color:red;flex-grow:1;">2</view>
+            <view style="background-color:green;flex-grow:1;">3</view>
+        </view>
+    </view>
 </view>
