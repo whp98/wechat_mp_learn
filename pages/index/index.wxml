@@ -1,26 +1,18 @@
-<!-- 导航页面 -->
-<view class='box'>
-    <view class="title">框架案例测试</view>
-    <navigator url="HelloWechat/index">
-        <view class="waikuang_0">
-            <icon type="success" class="myleft_0"></icon>
-            <view class="mycenter_0">HelloWeChat</view>
-            <image src="/images/right-arrow.png" class="myright_0"></image>
-        </view>
-    </navigator>
-    <navigator url="NiHao/nihao">
-        <view class="waikuang_0">
-            <icon type="success" class="myleft_0"></icon>
-            <view class="mycenter_0">你好</view>
-            <image src="/images/right-arrow.png" class="myright_0"></image>
-        </view>
-    </navigator>
-    <navigator url="NiHao/dajiahao">
-        <view class="waikuang_0">
-            <icon type="success" class="myleft_0"></icon>
-            <view class="mycenter_0">大家好</view>
-            <image src="/images/right-arrow.png" class="myright_0"></image>
-        </view>
-    </navigator>
-    
+<view class="box">
+    <view class="title">Float页面布局</view>
+
+    <view class="bg1">
+        <view class="box1">box1</view>
+        <view class="box2">box2</view>
+        <view class="box3">box3</view>
+        <view class="box4">box4</view>
+    </view>
+
+    <view class="bg2">
+        <view class="header">header</view>
+        <view class="leftBar">leftbar</view>
+        <view class="main">main</view>
+        <view class="rightBar">rightBar</view>
+        <view class="footer">footer</view>
+    </view>
 </view>
