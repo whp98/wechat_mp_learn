@@ -2,7 +2,10 @@
     "pages": [
         "pages/index/index",
         "pages/logs/logs",
-        "pages/kuangjia/index"
+        "pages/kuangjia/index",
+        "pages/index/HelloWechat/index",
+        "pages/index/NiHao/nihao",
+        "pages/index/NiHao/dajiahao"
     ],
     "window": {
         "backgroundTextStyle": "light",

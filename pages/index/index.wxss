@@ -79,3 +79,29 @@
     padding-left: 20px; /*内左边距*/
     margin:0 10px; /*外上下0 左右边距20px*/
 }
+
+navigator{
+    margin: 5px;
+    font-size: 20px;
+}
+
+.waikuang_0{
+    display: flex;
+    flex-direction: row;
+    margin: 5px 0px;
+    padding: 5px 0px;
+}
+
+.myleft_0{
+    margin-right: 10px;
+}
+
+.mycenter_0{
+    flex: 1;
+}
+
+.myright_0{
+    width: 40rpx;
+    height: 40rpx;
+    margin-top: 5px;
+}
