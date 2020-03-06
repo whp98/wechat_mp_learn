@@ -5,7 +5,9 @@
         "pages/kuangjia/index",
         "pages/index/HelloWechat/index",
         "pages/index/NiHao/nihao",
-        "pages/index/NiHao/dajiahao"
+        "pages/index/NiHao/dajiahao",
+        "pages/index/layout/Flex_layout",
+        "pages/index/layout/Float_layout"
     ],
     "window": {
         "backgroundTextStyle": "light",

@@ -1,8 +1,26 @@
 /**index.wxss**/
-/* 摄氏温度转华氏温度 */
+navigator{
+    margin: 5px;
+    font-size: 20px;
+}
 
-input{
-    /* input 组件上下边距为20左右边距为0 */
-    margin:20px 0;
-    border: 2px solid #B5DADB;
+.waikuang_0{
+    display: flex;
+    flex-direction: row;
+    margin: 5px 0px;
+    padding: 5px 0px;
+}
+
+.myleft_0{
+    margin-right: 10px;
+}
+
+.mycenter_0{
+    flex: 1;
+}
+
+.myright_0{
+    width: 40rpx;
+    height: 40rpx;
+    margin-top: 5px;
 }
