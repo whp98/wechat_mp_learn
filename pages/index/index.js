@@ -1,13 +1,14 @@
 //index.js
 
 Page({
-  data: {
-    imgSrc:"/images/icons8_cat_128px.png"
-  },
-  //事件处理函数
-  tapCat:function(){
-    let audio=wx.createInnerAudioContext();
-    audio.src ='/audios/10310.wav';
-    audio.play();
-  }
+    // 摄氏温度转换华氏温度
+    calce:function(e){
+        // 定义变量
+        var C,F; 
+        // 获取input组件的输入的数值
+        C = e.detail.value;
+        this.setData({
+            F: C*9/5+32
+        })
+    }
 })

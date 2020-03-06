@@ -1,18 +1,8 @@
+<!-- 摄氏度转华氏度 -->
 <view class="box">
-    <view class="title">Float页面布局</view>
-
-    <view class="bg1">
-        <view class="box1">box1</view>
-        <view class="box2">box2</view>
-        <view class="box3">box3</view>
-        <view class="box4">box4</view>
+    <view class="title">摄氏温度转华氏温度</view>
+    <view>
+        <input placeholder="请输入摄氏温度" type="digit"       bindblur="calce"></input>
     </view>
-
-    <view class="bg2">
-        <view class="header">header</view>
-        <view class="leftBar">leftbar</view>
-        <view class="main">main</view>
-        <view class="rightBar">rightBar</view>
-        <view class="footer">footer</view>
-    </view>
+    <view>华氏温度为：{{F}}</view>
 </view>
