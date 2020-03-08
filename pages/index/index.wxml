@@ -1,8 +1,8 @@
-<!-- 摄氏度转华氏度 -->
+<!-- 条件语句和数学函数 -->
 <view class="box">
-    <view class="title">摄氏温度转华氏温度</view>
+    <view class="title">条件语句和数学函数</view>
     <view>
-        <input placeholder="请输入摄氏温度" type="digit"       bindblur="calce"></input>
+        <input placeholder="请输入X的值"       bindblur="calc"></input>
     </view>
-    <view>华氏温度为：{{F}}</view>
+    <view>计算出y的值是：{{y}}</view>
 </view>
