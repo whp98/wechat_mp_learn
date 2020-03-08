@@ -1,26 +1,38 @@
 //index.js
 
 Page({
-    // 函数逻辑转换
-    calc:function(e){
-        // 定义变量x，y
-        var x,y; 
-        // 获取input组件的输入的数值并且赋值
-        x = e.detail.value;
-
-        //根据x值进行判断求y值
-        if(x<0){
-            y=Math.abs(x);
-        }else if(x<10){
-            y=Math.exp(x)*Math.sin(x);
-        }else if(x<20){
-            y=Math.pow(x,3);
-        }else{
-            y = (3+2*x)*Math.log(x);
-        }
-
+    data:{
+        showFlag:true,
+        name:'',
+        chinese_score:'',
+        math_score:'',
+        average:''
+    },
+    nameInput: function(e){
         this.setData({
-            y: y
-        })
+            name: e.detail.value
+        });
+    },
+    chineseInput: function (e) {
+        this.setData({
+            chinese_score: e.detail.value
+        });
+    },
+    mathInput: function (e) {
+        this.setData({
+            math_score: e.detail.value
+        });
+    },
+    mysubmit:function(e){
+        if(this.data.name==''||this.data.chinese_score=='' 
+        || this.data.math_score==''){
+            return '';
+        }else{
+            var avg = (this.data.chinese_score*1+this.data.math_score*1)/2;
+            this.setData({
+                showFlag: false,
+                average:avg,
+            });
+        }
     }
 })

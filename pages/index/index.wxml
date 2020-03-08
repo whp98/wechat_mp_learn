@@ -1,8 +1,17 @@
-<!-- 条件语句和数学函数 -->
+<!-- 学生成绩计算器 -->
 <view class="box">
-    <view class="title">条件语句和数学函数</view>
+    <view class="title">成绩计算器</view>
     <view>
-        <input placeholder="请输入X的值"       bindblur="calc"></input>
+        <input placeholder="请输入姓名" placeholder-class="placeholder" bindinput="nameInput"></input>
+        <input placeholder="请输入语文成绩" placeholder-class="placeholder" bindinput="chineseInput" type="number"></input>
+        <input placeholder="请输入数学成绩" placeholder-class="placeholder" bindinput="mathInput" type="number"></input>
     </view>
-    <view>计算出y的值是：{{y}}</view>
+    <button bindtap="mysubmit">提交</button>
+
+    <view hidden="{{showFlag}}" class="content">
+        <view class="content-item">姓名：{{name}}</view>
+        <view class="content-item">语文成绩：{{chinese_score}}</view>
+        <view class="content-item">数学成绩：{{math_score}}</view>
+        <view class="content-item">平均分：{{average}}</view>
+    </view>
 </view>
