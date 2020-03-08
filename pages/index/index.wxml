@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!-- 导航页面 -->
 <view class='box'>
     <view class="title">第二章作业</view>
@@ -15,4 +16,13 @@
             <image src="/images/right-arrow.png" class="myright_0"></image>
         </view>
     </navigator>
+=======
+<!-- 条件语句和数学函数 -->
+<view class="box">
+    <view class="title">条件语句和数学函数</view>
+    <view>
+        <input placeholder="请输入X的值"       bindblur="calc"></input>
+    </view>
+    <view>计算出y的值是：{{y}}</view>
+>>>>>>> dev
 </view>
