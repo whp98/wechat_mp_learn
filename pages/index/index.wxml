@@ -1,22 +1,3 @@
-<<<<<<< HEAD
-<!-- 导航页面 -->
-<view class='box'>
-    <view class="title">第二章作业</view>
-    <navigator url="layout/Flex_layout">
-        <view class="waikuang_0">
-            <icon type="success" class="myleft_0"></icon>
-            <view class="mycenter_0">Flex弹性盒模型布局</view>
-            <image src="/images/right-arrow.png" class="myright_0"></image>
-        </view>
-    </navigator>
-    <navigator url="layout/Float_layout">
-        <view class="waikuang_0">
-            <icon type="success" class="myleft_0"></icon>
-            <view class="mycenter_0">Float页面布局</view>
-            <image src="/images/right-arrow.png" class="myright_0"></image>
-        </view>
-    </navigator>
-=======
 <!-- 条件语句和数学函数 -->
 <view class="box">
     <view class="title">条件语句和数学函数</view>
@@ -24,5 +5,4 @@
         <input placeholder="请输入X的值"       bindblur="calc"></input>
     </view>
     <view>计算出y的值是：{{y}}</view>
->>>>>>> dev
 </view>

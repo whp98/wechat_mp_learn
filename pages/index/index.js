@@ -1,9 +1,6 @@
 //index.js
 
 Page({
-<<<<<<< HEAD
-  
-=======
     // 函数逻辑转换
     calc:function(e){
         // 定义变量x，y
@@ -26,5 +23,4 @@ Page({
             y: y
         })
     }
->>>>>>> dev
 })
