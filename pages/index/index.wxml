@@ -1,17 +1,10 @@
-<!-- 学生成绩计算器 -->
+<!-- 循环求和计算器 -->
 <view class="box">
-    <view class="title">成绩计算器</view>
+    <view class="title">循环语句求和计算器</view>
     <view>
-        <input placeholder="请输入姓名" placeholder-class="placeholder" bindinput="nameInput"></input>
-        <input placeholder="请输入语文成绩" placeholder-class="placeholder" bindinput="chineseInput" type="number"></input>
-        <input placeholder="请输入数学成绩" placeholder-class="placeholder" bindinput="mathInput" type="number"></input>
+        <input placeholder="请输入起点数值" placeholder-class="placeholder" bindinput="startNum" type="number"></input>
+        <input placeholder="请输入终点数值" placeholder-class="placeholder" bindinput="endNum" type="number"></input>
     </view>
-    <button bindtap="mysubmit">提交</button>
-
-    <view hidden="{{showFlag}}" class="content">
-        <view class="content-item">姓名：{{name}}</view>
-        <view class="content-item">语文成绩：{{chinese_score}}</view>
-        <view class="content-item">数学成绩：{{math_score}}</view>
-        <view class="content-item">平均分：{{average}}</view>
-    </view>
+    <view>两个数之间的和为：{{sum}}</view>
+    <button type="primary" bindtap='calc'>求和</button>
 </view>

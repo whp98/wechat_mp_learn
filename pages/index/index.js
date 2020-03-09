@@ -1,38 +1,25 @@
 //index.js
-
+//三个全局变量
+var start,end,sum;
 Page({
-    data:{
-        showFlag:true,
-        name:'',
-        chinese_score:'',
-        math_score:'',
-        average:''
+    startNum: function(e){
+        //将input组件的value转换为整数并赋值
+        start = parseInt(e.detail.value);
+        console.log(start);
     },
-    nameInput: function(e){
-        this.setData({
-            name: e.detail.value
-        });
+    endNum: function(e){
+        end = parseInt(e.detail.value);
+        console.log(end);
     },
-    chineseInput: function (e) {
-        this.setData({
-            chinese_score: e.detail.value
-        });
-    },
-    mathInput: function (e) {
-        this.setData({
-            math_score: e.detail.value
-        });
-    },
-    mysubmit:function(e){
-        if(this.data.name==''||this.data.chinese_score=='' 
-        || this.data.math_score==''){
-            return '';
-        }else{
-            var avg = (this.data.chinese_score*1+this.data.math_score*1)/2;
-            this.setData({
-                showFlag: false,
-                average:avg,
-            });
+
+    calc: function(){
+        sum=0;
+        for(var i = start ; i <= end ; i++){
+            sum = sum+i;
         }
+        console.log(sum);
+        this.setData({
+            sum: sum
+        })
     }
 })
