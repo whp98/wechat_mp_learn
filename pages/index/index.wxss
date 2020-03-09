@@ -1,21 +1,18 @@
 /**index.wxss**/
-.time{
-    width: 90%;
-    line-height: 200px;
-    background-color: yellow;
-    color: red;
-    font-size: 100px;
-    text-align: center;
-    border: 1px solid silver;
-    border-radius: 30px;
-    margin: 15px;
-}
 
-.btnLayout{
+.flex-wrp{
+    margin-top: 50rpx;
     display: flex;
     flex-direction: row;
+
 }
 
-button{
-    width: 45%;
+.item{
+    width: 300rpx;
+    height: 500rpx;
+}
+
+.btn{
+    margin-top: 20rpx;
+    margin-bottom: 20rpx;
 }
