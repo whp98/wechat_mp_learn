@@ -1,8 +1,9 @@
-<!-- 循环求和计算器 -->
-<view class="box">
-    <view class="title">随机数求和</view>
-    <view>产生的随机数数列为：</view>
-    <view wx:for="{{rand}}">{{item}}</view>
-    <view>随机数列的和为:{{sum}}</view>
-    <button type="primary" bindtap='newRand'>产生新的随机数</button>
+<!-- 计时器 -->
+<view class="box" hidden="{{hidden}}">
+    <view class="title">计时器</view>
+    <view class="time">{{num}}</view>
+    <view class="btnLayout">
+        <button bindtap="start">开始计时</button>
+        <button bindtap="stop">停止计时</button>
+    </view>
 </view>

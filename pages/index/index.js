@@ -1,36 +1,48 @@
 //index.js
-//三个全局变量
-var rand,sum;
-//产生随机数
-function createRand(){
-    //初始化随机数数组
-    rand=[];
-    //初始化sum变量
-    sum=0;
-    for(var i=0;i<6;i++){
-        var r = (Math.random()*100).toFixed(2)*1;//产生100以内的随机数
-        //将产生的随机数放到数组中
-        rand.push(r);
-        sum += rand[i];
-        console.log(rand[i]);
-    }
-    console.log(sum);
-}
+// 计时器显示的数字
+var num=60;
+// 计时器ID
+var timerID;
+
 Page({
-    onLoad: function(){
-        //产生随机数
-        createRand();
-        this.setData({
-            rand:rand,
-            sum:sum
+    data:{
+        hidden:true,
+        num:num
+    },
+    onLoad: function(options){
+        var that = this;
+        setTimeout(()=>{
+            that.show()
+        },500)//500ms后显示计时界面
+    },
+    show: function(){
+        var that = this;
+        that.setData({
+            hidden:false//显示计时界面
         })
     },
-    newRand:function(){
-        //产生随机数
-        createRand();
-        this.setData({
-            rand:rand,
-            sum:sum
-        })
+    start: function(){
+        var that = this;
+        timerID=setInterval(()=>{
+            that.timer()
+        },1000)//每隔一秒调用一次timer函数
+    },
+    stop:function(){
+        clearInterval(timerID)//清除计时器
+    },
+
+    timer:function(){
+        var that = this;
+        console.log(num)
+        if(num>0){
+            that.setData({
+                num:num--
+            })
+        }else{
+            that.setData({
+                num:0
+            })
+        }
+        console.log(num)
     }
 })
