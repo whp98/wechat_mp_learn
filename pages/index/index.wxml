@@ -1,10 +1,8 @@
 <!-- 循环求和计算器 -->
 <view class="box">
-    <view class="title">循环语句求和计算器</view>
-    <view>
-        <input placeholder="请输入起点数值" placeholder-class="placeholder" bindinput="startNum" type="number"></input>
-        <input placeholder="请输入终点数值" placeholder-class="placeholder" bindinput="endNum" type="number"></input>
-    </view>
-    <view>两个数之间的和为：{{sum}}</view>
-    <button type="primary" bindtap='calc'>求和</button>
+    <view class="title">随机数求和</view>
+    <view>产生的随机数数列为：</view>
+    <view wx:for="{{rand}}">{{item}}</view>
+    <view>随机数列的和为:{{sum}}</view>
+    <button type="primary" bindtap='newRand'>产生新的随机数</button>
 </view>
