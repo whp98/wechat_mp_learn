@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!-- 计时器 wxml-->
 <view class="box" hidden="{{hidden}}">
     <view class="title">秒表</view>
@@ -7,3 +8,7 @@
         <button bindtap="stop">停止计时</button>
     </view>
 </view>
+=======
+<!-- 计时器 -->
+<view>pages/index/index.wxml</view>
+>>>>>>> master

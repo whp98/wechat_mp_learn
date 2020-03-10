@@ -1,41 +1,25 @@
 //index.js
-// 计时器显示的数字
-var num=0;
-// 计时器ID
-var timerID;
 
 Page({
-    data:{
-        hidden:true,
-        num:num
+    onLoad: function () {
+        // 启动
+        console.log("index.js:onLoad");
     },
-    onLoad: function(options){
-        var that = this;
-        setTimeout(()=>{
-            that.show()
-        },500)//500ms后显示计时界面
+    onShow: function () {
+        // 显示
+        console.log("index.js:onShow")
     },
-    show: function(){
-        var that = this;
-        that.setData({
-            hidden:false//显示计时界面
-        })
+    onReady:function(){
+        // 页面初次渲染完成
+        console.log("index.js:onReady")
     },
-    start: function(){
-        var that = this;
-        timerID=setInterval(()=>{
-            that.timer()
-        },1000)//每隔一秒调用一次timer函数
+    onHide: function () {
+        // 隐藏
+        console.log("index.js:onHide")
     },
-    stop:function(){
-        clearInterval(timerID)//清除计时器
-    },
-
-    timer:function(){
-        var that = this;
-        that.setData({
-            num:num++
-        })
-        console.log(num)
+    onUnload: function(){
+        // 页面卸载
+        console.log("index.js:onUnload")
     }
+
 })
