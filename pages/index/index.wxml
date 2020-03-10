@@ -1,6 +1,6 @@
-<!-- 计时器 -->
+<!-- 计时器 wxml-->
 <view class="box" hidden="{{hidden}}">
-    <view class="title">计时器</view>
+    <view class="title">秒表</view>
     <view class="time">{{num}}</view>
     <view class="btnLayout">
         <button bindtap="start">开始计时</button>

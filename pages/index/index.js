@@ -1,6 +1,6 @@
 //index.js
 // 计时器显示的数字
-var num=60;
+var num=0;
 // 计时器ID
 var timerID;
 
@@ -33,16 +33,9 @@ Page({
 
     timer:function(){
         var that = this;
-        console.log(num)
-        if(num>0){
-            that.setData({
-                num:num--
-            })
-        }else{
-            that.setData({
-                num:0
-            })
-        }
+        that.setData({
+            num:num++
+        })
         console.log(num)
     }
 })
