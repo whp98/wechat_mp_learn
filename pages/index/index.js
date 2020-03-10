@@ -1,38 +1,23 @@
 //index.js
+const app = getApp();
+var util = require('../utils/util.js');
+var indexMsg = '我是来自index.js的变量';
+function indexFunc(){
+    return '我是来自index.js的函数';
+}
 
 Page({
 
-    data:{
-        a:10,
-        b:20,
-        c:30,
-        Student:{
-            stuID:"17051926",
-            name:"颤三",
-            birthday:'2001-1-9'
-        },
-        array:[
-            '2018',
-            '2019',
-            '2020'
-        ]
-    },
-    modify:function(){
-        this.setData({
-            a: 100,
-            b: 200,
-            c: 300,
-            Student: {
-                stuID: "1700051926",
-                name: "颤00三",
-                birthday: '20001-1-9'
-            },
-            array: [
-                '20118',
-                '22019',
-                '20220'
-            ]
-        })
+    data: {
+        /*全局*/
+        msg1: app.globalMsg,
+        msg2: app.globalFunc(),
+        /*本模块*/
+        msg3: indexMsg,
+        msg4: indexFunc(),
+        /*util模块*/
+        msg5: util.utilMsg,
+        msg6: util.utilFunc()
     }
 
 })
