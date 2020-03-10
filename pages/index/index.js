@@ -1,5 +1,8 @@
 //index.js
-
+// 计时器显示的数字
+var num=0;
+// 计时器ID
+var timerID;
 
 Page({
     onLoad: function () {
@@ -18,9 +21,13 @@ Page({
         // 隐藏
         console.log("index.js:onHide")
     },
-    onUnload: function(){
-        // 页面卸载
-        console.log("index.js:onUnload")
+
+    timer:function(){
+        var that = this;
+        that.setData({
+            num:num++
+        })
+        console.log(num)
     }
 
 })
