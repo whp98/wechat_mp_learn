@@ -11,7 +11,10 @@
         "pages/jiaoxue/jiaoxue",
         "pages/keyan/keyan",
         "pages/zixun/zixun",
-        "pages/guanyu/guanyu"
+        "pages/guanyu/guanyu",
+        "pages/mypage/todo",
+        "pages/mypage/calendar",
+        "pages/mypage/mail"
     ],
     "window": {
         "backgroundTextStyle": "light",
@@ -21,31 +24,25 @@
     },
     "tabBar": {
         "color": "#000",
-        "selectedColor": "#00f",
+        "selectedColor": "#0F0",
         "list": [
             {
                 "pagePath": "pages/index/index",
-                "text": "首页",
-                "iconPath": "images/home-off.png",
-                "selectedIconPath": "/images/home-on.png"
+                "text": "日程",
+                "iconPath": "images/icon/calendar_off.png",
+                "selectedIconPath": "/images/icon/calendar_on.png"
             },
             {
-                "pagePath": "pages/jiaoxue/jiaoxue",
-                "text": "教学",
-                "iconPath": "images/jiaoxue-off.png",
-                "selectedIconPath": "/images/jiaoxue-on.png"
+                "pagePath": "pages/mypage/mail",
+                "text": "邮件",
+                "iconPath": "images/icon/mail_off.png",
+                "selectedIconPath": "/images/icon/mail_on.png"
             },
             {
-                "pagePath": "pages/keyan/keyan",
-                "text": "科研",
-                "iconPath": "images/keyan-off.png",
-                "selectedIconPath": "/images/keyan-on.png"
-            },
-            {
-                "pagePath": "pages/zixun/zixun",
-                "text": "资讯",
-                "iconPath": "images/zixun-off.png",
-                "selectedIconPath": "/images/zixun-on.png"
+                "pagePath": "pages/mypage/todo",
+                "text": "待办",
+                "iconPath": "images/icon/todo_off.png",
+                "selectedIconPath": "/images/icon/todo_on.png"
             }
         ]
     },
