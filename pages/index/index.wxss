@@ -1,18 +1,2 @@
 /**index.wxss**/
 
-.flex-wrp{
-    margin-top: 50rpx;
-    display: flex;
-    flex-direction: row;
-
-}
-
-.item{
-    width: 300rpx;
-    height: 500rpx;
-}
-
-.btn{
-    margin-top: 20rpx;
-    margin-bottom: 20rpx;
-}
