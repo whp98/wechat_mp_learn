@@ -1,3 +1,5 @@
 {
-  "usingComponents": {}
+  "navigationBarBackgroundColor":"#B6A80D",
+  "navigationBarTitleText": "科研",
+  "navigationBarTextStyle": "white"
 }
