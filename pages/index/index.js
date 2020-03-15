@@ -1,11 +1,20 @@
 //index.js
 Page({
     data:{
-        array:["张三","李四","王五","赵六"],
-        object:{
-            "姓名":"张三",
-            "学号":"195612",
-            "性别":"男"
+        stu01:{
+            name:"www",
+            age:12,
+            gender:"man"
+        },
+        stu02: {
+            name: "小明",
+            age: 122,
+            gender: "女"
+        },
+        stu03: {
+            name: "sss",
+            age: 32,
+            gender: "男"
         }
     },
     scoreInput:function(e){
