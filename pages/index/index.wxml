@@ -1,11 +1,39 @@
-<view class='box'>
-    <view class="title">成绩等级计算器</view>
-    <view>请输入你的考试成绩</view>
-    <input bindblur="scoreInput" placeholder="在此输入成绩"></input>
-    <view wx:if="{{score>100||score<0}}">输入错误！</view>
-    <view wx:elif='{{score>90}}'>成绩优秀</view>
-    <view wx:elif='{{score>80}}'>成绩良好</view>
-    <view wx:elif='{{score>70}}'>成绩中等</view>
-    <view wx:elif='{{score>60}}'>成绩及格</view>
-    <view wx:else>成绩不及格</view>
+<view style="margin:20px;text-align:center">
+    <view class="box">
+        <view>绑定数组渲染</view>
+        <view wx:for='{{array}}'>
+            array[{{index}}:{{item}}]
+        </view>
+    </view>
+
+    <view class="box">
+        <view>直接数组渲染</view>
+        <view wx:for="{{['春','夏','秋','冬']}}">
+            array[{{index}}]:{{item}}
+        </view>
+    </view>
+
+    <view class="box">
+        <view>对象渲染</view>
+        <view wx:for='{{object}}'>
+            {{index}}:{{item}}
+        </view>
+    </view>
+
+    <view class="box">
+        <view>字符串渲染和index和item重命名</view>
+        <view wx:for='杜春涛' wx:for-index='i' wx:for-item='j'>
+            array[{{i}}]:{{j}}
+        </view>
+    </view>
+
+    <view class="box">
+        <view>利用block渲染多结构块</view>
+        <block wx:for="{{[1,2]}}">
+            <view class="view-item bc-red"></view>
+            <view class="view-item bc-green"></view>
+            <view class="view-item bc-blue"></view>
+        </block>
+    </view>
+
 </view>

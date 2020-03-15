@@ -1,7 +1,12 @@
 //index.js
 Page({
     data:{
-        score:0
+        array:["张三","李四","王五","赵六"],
+        object:{
+            "姓名":"张三",
+            "学号":"195612",
+            "性别":"男"
+        }
     },
     scoreInput:function(e){
         this.setData({
