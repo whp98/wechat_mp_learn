@@ -1,0 +1,8 @@
+<view class="header">
+    <view>首页</view>
+    <view>新闻</view>
+    <view>介绍</view>
+    <view>机构</view>
+    <view>教学</view>
+    <view>科研</view>
+</view>
