@@ -1,39 +1,9 @@
-<view style="margin:20px;text-align:center">
-    <view class="box">
-        <view>绑定数组渲染</view>
-        <view wx:for='{{array}}'>
-            array[{{index}}:{{item}}]
+<view class="con">
+    <view wx:for="{{[1,2,3,4,5,6,7,8,9]}}" wx:for-item="i">
+        <view class="inline" wx:for="{{[1,2,3,4,5,6,7,8,9]}}" wx:for-item="j">
+            <view wx:if="{{j<=i}}">
+                {{i}}*{{j}}={{i*j}}
+            </view>
         </view>
     </view>
-
-    <view class="box">
-        <view>直接数组渲染</view>
-        <view wx:for="{{['春','夏','秋','冬']}}">
-            array[{{index}}]:{{item}}
-        </view>
-    </view>
-
-    <view class="box">
-        <view>对象渲染</view>
-        <view wx:for='{{object}}'>
-            {{index}}:{{item}}
-        </view>
-    </view>
-
-    <view class="box">
-        <view>字符串渲染和index和item重命名</view>
-        <view wx:for='杜春涛' wx:for-index='i' wx:for-item='j'>
-            array[{{i}}]:{{j}}
-        </view>
-    </view>
-
-    <view class="box">
-        <view>利用block渲染多结构块</view>
-        <block wx:for="{{[1,2]}}">
-            <view class="view-item bc-red"></view>
-            <view class="view-item bc-green"></view>
-            <view class="view-item bc-blue"></view>
-        </block>
-    </view>
-
 </view>
