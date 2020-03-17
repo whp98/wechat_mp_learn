@@ -1,16 +1,25 @@
 /**index.wxss**/
-.header{
-    margin: 20rpx;
-    color: blue;
-    font-size: 22px;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
+input{
+    border:blue solid 2px;
 }
 
-.footer{
-    margin: 20rpx;
-    font-size: 15px;
-    text-align: center;
-    height: 100px;
+.btnLayout{
+    margin-top: 30px;
+    display: flex;
+    flex-direction: row;
+}
+
+.btnLayout button{
+    width: 30%;
+}
+
+.textLayout{
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+}
+
+.textLayout text{
+    margin-top: 10px;
+    font-size: 18px;
 }

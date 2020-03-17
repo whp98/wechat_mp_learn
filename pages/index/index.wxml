@@ -1,6 +1,19 @@
 <view class='box'>
     <view class="title">货币兑换</view>
-    <form bindsubmit="formSubmit" bindreset="formRest">
-        <input name='cels'></input>
+    <form bindsubmit="formSubmit" bindreset="formReset">
+        <input name='cels' placeholder="请输入人民币金额" type='number' auto-focus="true"></input>
+        <view class="btnLayout">
+            <button type="primary" form-type="submit">计算</button>
+            <button type="primary" form-type="reset">清除</button>
+        </view>
+        兑换
+        <view class="textLayout">
+            <text>美元为：{{MY}}</text>
+            <text>英镑为：{{YB}}</text>
+            <text>香港为：{{XG}}</text>
+            <text>欧元为：{{OY}}</text>
+            <text>韩元为：{{HY}}</text>
+            <text>日元为：{{RY}}</text>
+        </view>
     </form>
 </view>
