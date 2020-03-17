@@ -1,16 +1,6 @@
 /**index.wxss**/
-.inputLayout{
-    display: flex;
-    flex-direction: row;
-    margin: 20px;
-}
-
-.inputLayout input{
-    justify-content: center;
-    border:blue solid 1px;
-    margin-bottom: 15px;
-}
-
-.inputLayout button{
-    justify-content: center;
+radio,checkbox{
+    margin-top: 20rpx;
+    margin-bottom: 10rpx;
+    margin-right: 10rpx;
 }
