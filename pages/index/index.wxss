@@ -1,25 +1,16 @@
 /**index.wxss**/
-input{
-    border:blue solid 2px;
-}
-
-.btnLayout{
-    margin-top: 30px;
+.inputLayout{
     display: flex;
     flex-direction: row;
+    margin: 20px;
 }
 
-.btnLayout button{
-    width: 30%;
+.inputLayout input{
+    justify-content: center;
+    border:blue solid 1px;
+    margin-bottom: 15px;
 }
 
-.textLayout{
-    margin-top: 30px;
-    display: flex;
-    flex-direction: column;
-}
-
-.textLayout text{
-    margin-top: 10px;
-    font-size: 18px;
+.inputLayout button{
+    justify-content: center;
 }

@@ -1,19 +1,12 @@
 <view class='box'>
-    <view class="title">货币兑换</view>
-    <form bindsubmit="formSubmit" bindreset="formReset">
-        <input name='cels' placeholder="请输入人民币金额" type='number' auto-focus="true"></input>
-        <view class="btnLayout">
-            <button type="primary" form-type="submit">计算</button>
-            <button type="primary" form-type="reset">清除</button>
-        </view>
-        兑换
-        <view class="textLayout">
-            <text>美元为：{{MY}}</text>
-            <text>英镑为：{{YB}}</text>
-            <text>香港为：{{XG}}</text>
-            <text>欧元为：{{OY}}</text>
-            <text>韩元为：{{HY}}</text>
-            <text>日元为：{{RY}}</text>
-        </view>
+    <view class="title">三角形面积计算器</view>
+    <view>输入三条边的长度就可以计算出三角形的面积</view>
+    <view>输入三条边的长度：</view>
+    <form  class="inputLayout" bindsubmit="formSubmit" bindreset="formReset">
+        <input type="digit" placeholder="边1" name='a' value="{{a}}"></input>
+        <input type="digit" placeholder="边2" name='b' value="{{b}}"></input>
+        <input type="digit" placeholder="边3" name='c' value="{{c}}"></input>
+        <button form-type="submit" type="primary">计算</button>
     </form>
+    <text>三角形的面积为：{{result}}</text>
 </view>
