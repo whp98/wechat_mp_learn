@@ -1,14 +1,13 @@
 <view class='box'>
-    <view class="title">修改字体样式和大小</view>
-    <text style="font-weight:{{myBold}}; font-style:{{myItalic}}; text-decoration:{{myUnderline}}; font-size:{{myFontSize}}">HDU 杭电</text>
-    <checkbox-group bindchange='checkboxchange'>
-        <checkbox value="isBold">加粗</checkbox>
-        <checkbox value="isItalic">倾斜</checkbox>
-        <checkbox value="isUnderline">下划线</checkbox>
-    </checkbox-group>
-    <radio-group bindchange='radiochange'>
-        <radio value="15px">15px</radio>
-        <radio value="25px">25px</radio>
-        <radio value="35px" checked="true">35px</radio>
-    </radio-group>
+    <view class="title">滑动条和颜色</view>
+    <text>红色滑动条</text>
+    <slider data-color="r" value="{{r}}" max="255" block-color="red" show-value="true" bindchanging="colorChanging"></slider>
+    <text>绿色滑动条</text>
+    <slider data-color="g" value="{{g}}" max="255" block-color="green" show-value="true" bindchanging="colorChanging"></slider>
+    <text>蓝色滑动条</text>
+    <slider data-color="b" value="{{b}}" max="255" block-color="blue" show-value="true" bindchanging="colorChanging"></slider>
+    <text>透明滑动条</text>
+    <slider data-color='a' value="{{a}}" max="1" step="0.01" block-color="purple" show-value="true" bindchange="colorChanging"></slider>
+    <view class="colorArea" style="background-color:rgba({{r}},{{g}},{{b}},{{a}});"></view>
+    <view>rgba({{r}},{{g}},{{b}},{{a}})</view>
 </view>

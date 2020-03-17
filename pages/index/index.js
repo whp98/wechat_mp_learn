@@ -1,36 +1,17 @@
 //index.js
 Page({
     data:{
-        myFontSize:'25px'
+        r:50,
+        g:65,
+        b:89,
+        a:0.5
     },
-    checkboxchange: function(e){
-        var text = [];
-        var mybold = '';
-        var myitalic = '';
-        var myunderline = '';
-        text = e.detail.value;
-        console.log(text);
-        for(var i = 0;i<text.length;i++){
-            if(text[i]=='isBold'){
-                mybold = 'bold';
-            }
-            if (text[i] == 'isItalic') {
-                myitalic = 'italic';
-            }
-            if (text[i] == 'isUnderline') {
-                myunderline = 'underline';
-            }
-        }
+    colorChanging(e){
+        let color = e.currentTarget.dataset.color //获取slader组件的data-color值
+        let value = e.detail.value; //slader组件的value
+        console.log(color,value)
         this.setData({
-            myBold:mybold,
-            myItalic:myitalic,
-            myUnderline:myunderline
+            [color]:value
         })
-    },
-    radiochange:function(e){
-        this.setData({
-            myFontSize: e.detail.value
-        })
-        console.log(e.detail.value);
     }
 })
