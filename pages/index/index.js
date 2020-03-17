@@ -1,17 +1,32 @@
 //index.js
 Page({
     data:{
-        r:50,
-        g:65,
-        b:89,
-        a:0.5
+        background:['bc-red','bc-green','bc-blue'],
+        indicatorDots:true,
+        autoplay:false,
+        circular:false,
+        vertical:false,
+        interval:2000,
+        duration:500
     },
-    colorChanging(e){
-        let color = e.currentTarget.dataset.color //获取slader组件的data-color值
-        let value = e.detail.value; //slader组件的value
-        console.log(color,value)
+    changeIndicatorDots:function(e){
         this.setData({
-            [color]:value
+            indicatorDots:!this.data.indicatorDots
+        })
+    },
+    changeAutoplay:function(e){
+        this.setData({
+            autoplay: !this.data.autoplay
+        })
+    },
+    changeCircular: function (e) {
+        this.setData({
+            circular: !this.data.circular
+        })
+    },
+    changeVertical: function (e) {
+        this.setData({
+            vertical: !this.data.vertical
         })
     }
 })
