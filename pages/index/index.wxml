@@ -9,9 +9,9 @@
     ---------------------------
     <template is="student" data="{{name:'haha',age:'30',gender:'男'}}"></template> -->
     <template is="car" data="{{...car01}}"></template>
-    ++++++++++++++++++++++++++++++++++++++++
+    ++++++++++++++++++++++++
     <template is="car" data="{{...car02}}"></template>
-    ++++++++++++++++++++++++++++++++++++++++
+    ++++++++++++++++++++++++
     <template is="car" data="{{...car03}}"></template>
 
 </view>
