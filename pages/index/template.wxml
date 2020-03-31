@@ -3,3 +3,8 @@
     <view>age:{{age}}</view>
     <view>gender:{{gender}}</view>
 </template>
+<template name="car">
+    <view>品牌:{{brand}}</view>
+    <view>型号:{{model}}</view>
+    <view>颜色:{{color}}</view>
+</template>

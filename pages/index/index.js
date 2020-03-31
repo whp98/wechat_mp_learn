@@ -15,6 +15,21 @@ Page({
             name: "sss",
             age: 32,
             gender: "男"
+        },
+        car01:{
+            brand:"特斯拉",
+            model:"Y",
+            color:"黑色"
+        },
+        car02: {
+            brand: "特斯拉",
+            model: "S",
+            color: "红色"
+        },
+        car03:{
+            brand:"奔驰",
+            model:"s600",
+            color:"银灰色"
         }
     },
     scoreInput:function(e){

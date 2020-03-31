@@ -1,11 +1,17 @@
 <view class="box">
     <view class="title">模板的定义和引用</view>
     <import src="template.wxml" />
-    <template is="student" data="{{...stu01}}"></template>
+    <!-- <template is="student" data="{{...stu01}}"></template>
     -----------------------------
     <template is="student" data="{{...stu02}}"></template>
     ---------------------------
     <template is="student" data="{{...stu03}}"></template>
     ---------------------------
-    <template is="student" data="{{name:'haha',age:'30',gender:'男'}}"></template>
+    <template is="student" data="{{name:'haha',age:'30',gender:'男'}}"></template> -->
+    <template is="car" data="{{...car01}}"></template>
+    ++++++++++++++++++++++++++++++++++++++++
+    <template is="car" data="{{...car02}}"></template>
+    ++++++++++++++++++++++++++++++++++++++++
+    <template is="car" data="{{...car03}}"></template>
+
 </view>
