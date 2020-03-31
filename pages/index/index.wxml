@@ -1,11 +1,13 @@
 <view class='box'>
-    <view class="title">成绩等级计算器</view>
-    <view>请输入你的考试成绩</view>
+    <view class="title">温度等级计算器</view>
+    <view>请输入温度</view>
     <input bindblur="scoreInput" placeholder="在此输入成绩"></input>
-    <view wx:if="{{score>100||score<0}}">输入错误！</view>
-    <view wx:elif='{{score>90}}'>成绩优秀</view>
-    <view wx:elif='{{score>80}}'>成绩良好</view>
-    <view wx:elif='{{score>70}}'>成绩中等</view>
-    <view wx:elif='{{score>60}}'>成绩及格</view>
-    <view wx:else>成绩不及格</view>
+    <view wx:if="{{score>1000||score<0}}">输入错误！</view>
+    <view wx:elif='{{score>39}}'>极热</view>
+    <view wx:elif='{{score>34.9}}'>奇热</view>
+    <view wx:elif='{{score>29.9}}'>酷热</view>
+    <view wx:elif='{{score>27.9}}'>暑热</view>
+    <view wx:elif='{{score>24.9}}'>炎热</view>
+    <view wx:elif='{{score>=22}}'>热</view>
+    <view wx:else>低于22°C</view>
 </view>
