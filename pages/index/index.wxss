@@ -1,22 +1,12 @@
 /**index.wxss**/
 
-/* 文字和输入框在同一行的样式 */
-.lineLayout{
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
-    align-items: center;
+.imgLayout{
+    text-align: center;
+    margin: 5px 0;
 }
 
-input{
-    /* input 组件样式 */
-    height: 30px;
-    border-bottom: 2px solid silver;
-    margin: 10rpx 0;
-}
-
-
-picker,button{
-    /* picker和button组件的样式 */
-    margin: 15px 0;
+image{
+    width: 200px;
+    height: 200px;
+    background-color: #eee;
 }

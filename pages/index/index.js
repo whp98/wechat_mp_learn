@@ -1,61 +1,30 @@
 //index.js
-function Person(name,sex,birthPlace,birthDay,height,weight){
-    //定义构造函数，用于创建对象
-    this.name =name;
-    this.sex=sex;
-    this.birthPlace=birthPlace;
-    this.birthDay=birthDay;
-    this.height=height;
-    this.weight=weight;
-}
-
 Page({
-    data:{
-        flag:true,
-        gender:['男','女']
-    },
-
-    nameInput:function(e){
-        this.name=e.detail.value
-    },
-    //选择性别之后把结果放到页面上
-    pickerSex:function(e){
-        this.sex=this.data.gender[e.detail.value]
-        this.setData({
-            sex:this.sex
-        })
-    },
-    //将籍贯结果显示
-    pickerRegion:function(e){
-        this.birthPlace=e.detail.value;
-        this.setData({
-            birthPlace:this.birthPlace
-        })
-    },
-    //出生日期选择器
-    pickerDate:function(e){
-        this.birthDay=e.detail.value;
-        this.setData({
-            birthDay:this.birthDay
-        })
-    },
-    heightInput:function(e){
-        this.height=e.detail.value
-        this.setData({
-            height:this.height
-        })
-    },
-    weightInput:function(e){
-        this.weight = e.detail.value
-        this.setData({
-            height: this.weight
-        })
-    },
-    showMessage:function(e){
-        var p = new Person(this.name,this.sex,this.birthPlace,this.birthDay,this.height,this.weight)
-        this.setData({
-            flag:false,
-            person:p
-        })
+    data: {
+        src: "../../images/huozaidangxia.jpg",
+        imgArray: [
+            {
+                mode: 'aspectFit',
+                text: 'aspectFit:保持横纵比缩放图片让图片完整显示出来'
+            }, {
+                mode: 'scaleToFill',
+                text: 'scaleToFill:拉伸显示图片，不会保持横纵比'
+            }, {
+                mode: 'aspectFill',
+                text: 'aspectFill:保持横纵比缩放图片让图片的短边显示出来'
+            }, {
+                mode: 'top',
+                text: 'top,不缩放图片，只是显示图片顶部区域'
+            }, {
+                mode: 'bottom',
+                text: 'bottom 不缩放图片只显示图片的底部区域'
+            }, {
+                mode: 'center',
+                text: 'center 显示图片的中间区域'
+            },{
+                mode:"widthFix",
+                text:"widthFix,保持纵横比，宽度完全显示，高度不限制"
+            }
+        ]
     }
 })
