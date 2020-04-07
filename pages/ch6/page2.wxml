@@ -1,2 +1,13 @@
-<!--pages/ch6/page2.wxml-->
-<text>pages/ch6/page2.wxml</text>
+<!--pages\ch6\page2.wxml-->
+<view class='box'>
+    <view class="title">三角形面积计算器</view>
+    <view>输入三条边的长度就可以计算出三角形的面积</view>
+    <view>输入三条边的长度：</view>
+    <form  class="inputLayout" bindsubmit="formSubmit" bindreset="formReset">
+        <input type="digit" placeholder="边1" name='a' value="{{a}}"></input>
+        <input type="digit" placeholder="边2" name='b' value="{{b}}"></input>
+        <input type="digit" placeholder="边3" name='c' value="{{c}}"></input>
+        <button form-type="submit" type="primary">计算</button>
+    </form>
+    <text>三角形的面积为：{{result}}</text>
+</view>

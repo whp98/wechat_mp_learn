@@ -1,2 +1,15 @@
-<!--pages/ch6/page3.wxml-->
-<text>pages/ch6/page3.wxml</text>
+<!--pages\ch6\page3.wxml-->
+<view class='box'>
+    <view class="title">修改字体样式和大小</view>
+    <text style="font-weight:{{myBold}}; font-style:{{myItalic}}; text-decoration:{{myUnderline}}; font-size:{{myFontSize}}">HDU 杭电</text>
+    <checkbox-group bindchange='checkboxchange'>
+        <checkbox value="isBold">加粗</checkbox>
+        <checkbox value="isItalic">倾斜</checkbox>
+        <checkbox value="isUnderline">下划线</checkbox>
+    </checkbox-group>
+    <radio-group bindchange='radiochange'>
+        <radio value="15px">15px</radio>
+        <radio value="25px">25px</radio>
+        <radio value="35px" checked="true">35px</radio>
+    </radio-group>
+</view>

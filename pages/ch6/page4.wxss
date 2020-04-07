@@ -1,1 +1,6 @@
-/* pages/ch6/page4.wxss */
+/**pages\ch6\page4.wxss**/
+
+.colorArea{
+    width: 100px;
+    height: 100px;
+}

@@ -1,1 +1,25 @@
 /* pages/ch6/page1.wxss */
+input{
+    border:blue solid 2px;
+}
+
+.btnLayout{
+    margin-top: 30px;
+    display: flex;
+    flex-direction: row;
+}
+
+.btnLayout button{
+    width: 30%;
+}
+
+.textLayout{
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+}
+
+.textLayout text{
+    margin-top: 10px;
+    font-size: 18px;
+}

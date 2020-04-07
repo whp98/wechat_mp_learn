@@ -1,66 +1,17 @@
-// pages/ch6/page4.js
+//pages\ch6\page4.js
 Page({
-
-    /**
-     * 页面的初始数据
-     */
     data: {
-
+        r: 50,
+        g: 65,
+        b: 89,
+        a: 0.5
     },
-
-    /**
-     * 生命周期函数--监听页面加载
-     */
-    onLoad: function (options) {
-
-    },
-
-    /**
-     * 生命周期函数--监听页面初次渲染完成
-     */
-    onReady: function () {
-
-    },
-
-    /**
-     * 生命周期函数--监听页面显示
-     */
-    onShow: function () {
-
-    },
-
-    /**
-     * 生命周期函数--监听页面隐藏
-     */
-    onHide: function () {
-
-    },
-
-    /**
-     * 生命周期函数--监听页面卸载
-     */
-    onUnload: function () {
-
-    },
-
-    /**
-     * 页面相关事件处理函数--监听用户下拉动作
-     */
-    onPullDownRefresh: function () {
-
-    },
-
-    /**
-     * 页面上拉触底事件的处理函数
-     */
-    onReachBottom: function () {
-
-    },
-
-    /**
-     * 用户点击右上角分享
-     */
-    onShareAppMessage: function () {
-
+    colorChanging(e) {
+        let color = e.currentTarget.dataset.color //获取slader组件的data-color值
+        let value = e.detail.value; //slader组件的value
+        console.log(color, value)
+        this.setData({
+            [color]: value
+        })
     }
 })

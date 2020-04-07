@@ -2,9 +2,9 @@
 <view class="title">导航</view>
 
 <view class="items">
-    <navigator url=""><view>1.汇率计算器</view></navigator>
-    <navigator><view>2.三角形面积计算器</view></navigator>
-    <navigator><view>3.checkbox和redio的练习，改变字体的样式</view></navigator>
-    <navigator><view>4.滑动条和颜色，通过滑动条改变颜色</view></navigator>
-    <navigator><view>5.使用switch组件控制轮播图组件</view></navigator>
+    <navigator url='/pages/ch6/page1' >1.汇率计算器</navigator>
+    <navigator url="/pages/ch6/page2"><view>2.三角形面积计算器</view></navigator>
+    <navigator url="/pages/ch6/page3"><view>3.checkbox和redio的练习，改变字体的样式</view></navigator>
+    <navigator url="/pages/ch6/page4"><view>4.滑动条和颜色，通过滑动条改变颜色</view></navigator>
+    <navigator url="/pages/ch6/page5"><view>5.使用switch组件控制轮播图组件</view></navigator>
 </view>
