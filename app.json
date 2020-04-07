@@ -2,24 +2,6 @@
     "pages": [
         "pages/index/index",
         "pages/logs/logs",
-        "pages/kuangjia/index",
-        "pages/index/HelloWechat/index",
-        "pages/index/NiHao/nihao",
-        "pages/index/NiHao/dajiahao",
-        "pages/index/layout/Flex_layout",
-        "pages/index/layout/Float_layout",
-        "pages/jiaoxue/jiaoxue",
-        "pages/keyan/keyan",
-        "pages/zixun/zixun",
-        "pages/guanyu/guanyu",
-        "pages/mypage/todo",
-        "pages/mypage/calendar",
-        "pages/mypage/mail",
-        "pages/ch6/page1",
-        "pages/ch6/page2",
-        "pages/ch6/page3",
-        "pages/ch6/page4",
-        "pages/ch6/page5",
         "pages/nav_page/pageforv6.6/navpage"
     ],
     "window": {
@@ -27,30 +9,6 @@
         "navigationBarBackgroundColor": "#fff",
         "navigationBarTitleText": "whp的APP",
         "navigationBarTextStyle": "black"
-    },
-    "tabBar": {
-        "color": "#000",
-        "selectedColor": "#0F0",
-        "list": [
-            {
-                "pagePath": "pages/index/index",
-                "text": "日程",
-                "iconPath": "images/icon/calendar_off.png",
-                "selectedIconPath": "/images/icon/calendar_on.png"
-            },
-            {
-                "pagePath": "pages/mypage/mail",
-                "text": "邮件",
-                "iconPath": "images/icon/mail_off.png",
-                "selectedIconPath": "/images/icon/mail_on.png"
-            },
-            {
-                "pagePath": "pages/mypage/todo",
-                "text": "待办",
-                "iconPath": "images/icon/todo_off.png",
-                "selectedIconPath": "/images/icon/todo_on.png"
-            }
-        ]
     },
     "style": "v2",
     "sitemapLocation": "sitemap.json"
