@@ -1,6 +1,6 @@
 {
     "pages": [
-        "pages/nav_page/pageforv6.6/navpage",
+        "pages/index/index",
         "pages/logs/logs",
         "pages/kuangjia/index",
         "pages/index/HelloWechat/index",
@@ -15,12 +15,12 @@
         "pages/mypage/todo",
         "pages/mypage/calendar",
         "pages/mypage/mail",
-        "pages/index/index",
         "pages/ch6/page1",
         "pages/ch6/page2",
         "pages/ch6/page3",
         "pages/ch6/page4",
-        "pages/ch6/page5"
+        "pages/ch6/page5",
+        "pages/nav_page/pageforv6.6/navpage"
     ],
     "window": {
         "backgroundTextStyle": "light",
