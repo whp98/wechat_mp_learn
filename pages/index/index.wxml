@@ -1,13 +1,13 @@
 <!--图片组件的高级使用-->
 
 <view class='box'>
-    <view class="title">音频播放</view>
-    <audio id='myAudio' poster='{{poster}}' name='{{name}}' src='{{src}}' controls loop></audio>
+    <view class="title">视频组件和发射弹幕</view>
+    <view class="videoLayout">
+        <video id='myVideo' src="https://boot-video.xuexi.cn/video/1004/p/badd35c197c6c2dcdb7f1044fa2c25b8-65eaeb216e73459a997f771992d10d32-2.mp4" danmu-list='{{danmulist}}' enable-danmu danmu-btn controls></video>
+    </view>
     <view>
-        <button bindtap="audioPlay">播放</button>
-        <button bindtap="audioPause">暂停</button>
-        <button bindtap="audio14">设置播放时间是14秒</button>
-        <button bindtap="audioStart">从开头播放</button>
-
+        <view class="view">弹幕内容</view>
+        <input bindblur="inputBlur" type="text" placeholder="在此输入弹幕内容"></input>
+        <button type='primary' bindtap="sendDanmu">发送弹幕</button>
     </view>
 </view>
