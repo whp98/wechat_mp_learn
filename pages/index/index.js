@@ -1,30 +1,26 @@
 //index.js
 Page({
     data: {
-        src: "../../images/huozaidangxia.jpg",
-        imgArray: [
-            {
-                mode: 'aspectFit',
-                text: 'aspectFit:保持横纵比缩放图片让图片完整显示出来'
-            }, {
-                mode: 'scaleToFill',
-                text: 'scaleToFill:拉伸显示图片，不会保持横纵比'
-            }, {
-                mode: 'aspectFill',
-                text: 'aspectFill:保持横纵比缩放图片让图片的短边显示出来'
-            }, {
-                mode: 'top',
-                text: 'top,不缩放图片，只是显示图片顶部区域'
-            }, {
-                mode: 'bottom',
-                text: 'bottom 不缩放图片只显示图片的底部区域'
-            }, {
-                mode: 'center',
-                text: 'center 显示图片的中间区域'
-            },{
-                mode:"widthFix",
-                text:"widthFix,保持纵横比，宽度完全显示，高度不限制"
-            }
-        ]
+        poster:'https://y.gtimg.cn/music/photo_new/T002R300x300M000001hGx1Z0so1YX.jpg?max_age=2592000',
+        name:'我是如此相信',
+        author:'周杰伦',
+        src:'http://isure.stream.qqmusic.qq.com/C400001PLl3C4gPSCI.m4a?guid=4486890145&vkey=B7CC4E7890585EEE272DAC578ADC65BC6AA32E2564BF91EE20924FBAAA994F96CAF590882907514D46EF98BCED45217D381CBFB2E417770D&uin=208&fromtag=66',
+    
+    },
+    onLoad:function(options){
+        //页面初始化
+        this.audioCtx = wx.createAudioContext('myAudio')//创建音频上下文
+    },
+    audioPlay:function(){
+        this.audioCtx.play()
+    },
+    audioPause:function(){
+        this.audioCtx.pause()
+    },
+    audioStart:function(){
+        this.audioCtx.seek(0)
+    },
+    audio14:function(){
+        this.audioCtx.seek(14)
     }
 })

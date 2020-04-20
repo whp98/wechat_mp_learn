@@ -1,12 +1,13 @@
 /**index.wxss**/
 
-.imgLayout{
-    text-align: center;
-    margin: 5px 0;
+button{
+    margin-top: 50rpx;
+    width: 500rpx;
 }
 
-image{
-    width: 200px;
-    height: 200px;
-    background-color: #eee;
+.btnLayout{
+    margin-top: 50rpx;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* 沿着交叉轴方向居中对齐 */
 }

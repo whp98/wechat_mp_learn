@@ -1,12 +1,13 @@
 <!--图片组件的高级使用-->
 
 <view class='box'>
-    <view class="title">图片展示</view>
-    <view wx:for="{{imgArray}}">
-        <view>{{item.text}}</view>
-        <view class="imgLayout">
-            <image src="{{src}}" mode="{{item.mode}}"></image>
-        </view>
-        --------------------------
+    <view class="title">音频播放</view>
+    <audio id='myAudio' poster='{{poster}}' name='{{name}}' src='{{src}}' controls loop></audio>
+    <view>
+        <button bindtap="audioPlay">播放</button>
+        <button bindtap="audioPause">暂停</button>
+        <button bindtap="audio14">设置播放时间是14秒</button>
+        <button bindtap="audioStart">从开头播放</button>
+
     </view>
 </view>
