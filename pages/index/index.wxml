@@ -1,6 +1,5 @@
 <view class="box">
-  <view class='title'>变脸游戏</view>
-  <view>
-    <image src="{{imgArr[index]}}" bindtap="changeFace" mode="widthFix"></image>
-  </view>
+  <view class='title'>阶乘计算器</view>
+  <input type="number" bindinput="getInput" placeholder='请输入要求阶乘的数'></input>
+  <text>结果为:{{result}}</text>
 </view>

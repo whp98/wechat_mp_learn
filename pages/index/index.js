@@ -1,45 +1,43 @@
 //index.js
 
-function getRandIn(){
-    //产生0-9之间的随机整数
-    return Math.floor(Math.random()*10);
-}
 
 Page({
-    
-    data:{
-        index: 0,//初始化数组下标为0
-        imgArr: [
-            '/images/1.jpeg',
-            '/images/2.jpg',
-            '/images/3.jpeg',
-            '/images/4.jpg',
-            '/images/5.jpeg',
-            '/images/6.jpg',
-            '/images/7.jpeg',
-            '/images/8.jpeg',
-            '/images/9.jpeg',
-            '/images/3.jpg'
-        ],
+    getInput: function(e) {
+        this.inputVal = e.detail.value;
     },
-    changeFace:function(){
-        this.setData({
-            index:getRandIn()
-        })
-    },
-    onShow:function(){
+
+    onShow: function() {
         var that = this;
-        wx.onAccelerometerChange(function(res){//加速度变化监听函数
-            if(res.x> 0.5|| res.y>0.5 || res.z>0.5){
-                wx.showToast({
+        that.isShow = true;
+        //加速度改变的api
+        wx.onAccelerometerChange(function(e) {
+            if (!that.isShow) {
+                //判断小程序是否显示
+                return
+            }
+            //判断手机是否晃动到某一程度
+            if (e.x > 0.5 || e.y > 0.5 || e.z > 0.5) {
+                wx.showToast({ //显示消息框
                     title: '摇一摇成功',
-                    icon:'success',
-                    duration:1000 //显示时间
+                    icon: 'success',
+                    duration: 2000
                 })
-                that.changeFace()
+                var result = 1;
+                console.log(that.inputVal)
+                for (var i = 1; i <= that.inputVal; i++) {
+                    result = result * i;
+                    console.log(result)
+                }
+                console.log(result)
+                that.setData({
+                    result:result
+                })
             }
         })
+
+    },
+    onHide: function() {
+        this.isShow = false
     }
-    
 
 })
