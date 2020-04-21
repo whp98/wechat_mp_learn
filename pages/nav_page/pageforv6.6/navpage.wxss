@@ -1,8 +1,0 @@
-/* pages/nav_page/pageforv6.6/navpage.wxss */
-
-navigator{
-    margin-bottom: 2em;
-    border-bottom: solid;
-    border-bottom-width: 1px;
-    color: blue;
-}

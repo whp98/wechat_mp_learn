@@ -1,9 +1,7 @@
 {
     "pages": [
         "pages/index/index",
-        "pages/logs/logs",
-        "pages/nav_page/pageforv6.6/navpage",
-        "pages/details/details"
+        "pages/logs/logs"
     ],
     "window": {
         "backgroundTextStyle": "light",
