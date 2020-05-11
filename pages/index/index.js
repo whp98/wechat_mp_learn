@@ -5,10 +5,14 @@ Page({
     //加载之后绘制
     onShow:function(){
         const ctx = wx.createCanvasContext('myCanvas')
-        ctx.setFillStyle('red')
-        ctx.setShadow(10, 50, 50, 'blue')
-        ctx.fillRect(10, 10, 150, 75)
-        ctx.draw()        
+        ctx.setStrokeStyle('black')
+        ctx.setLineWidth(1)
+        ctx.strokeRect(10, 10, 45, 25)
+        ctx.setLineWidth(2)
+        ctx.strokeRect(20, 20, 200, 100)
+        ctx.setLineWidth(3)
+        ctx.strokeRect(30, 30, 250, 120)
+        ctx.draw()         
     },
     clear:function(){
         ctx.draw() //刷新屏幕 显示绘制效果
