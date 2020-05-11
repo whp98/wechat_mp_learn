@@ -2,13 +2,13 @@
 //创建画布上下文
 var ctx = wx.createCanvasContext('myCanvas')
 Page({
-
+    //加载之后绘制
     onShow:function(){
-        ctx.setFillStyle("red")
-        ctx.fillRect(10,10,200,200)
-        ctx.setFillStyle("black")
-        ctx.fillRect(30,30,200,200)
-        ctx.draw()
+        const ctx = wx.createCanvasContext('myCanvas')
+        ctx.setFillStyle('red')
+        ctx.setShadow(10, 50, 50, 'blue')
+        ctx.fillRect(10, 10, 150, 75)
+        ctx.draw()        
     },
     clear:function(){
         ctx.draw() //刷新屏幕 显示绘制效果
@@ -84,6 +84,7 @@ Page({
     //绘制圆形渐变
     circularGrad:function(){
         var grd = ctx.createCircularGradient(175,175,125)//以175.175为圆心125为半径渐变
+        var sss = ctx.createLinearGradient(175, 175, 125) 
         grd.addColorStop(0,'purple')//以渐变为起点
         grd.addColorStop(1,'white')//添加渐变终点
         ctx.setFillStyle(grd)
