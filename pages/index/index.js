@@ -2,6 +2,14 @@
 //创建画布上下文
 var ctx = wx.createCanvasContext('myCanvas')
 Page({
+
+    onShow:function(){
+        ctx.setFillStyle("red")
+        ctx.fillRect(10,10,200,200)
+        ctx.setFillStyle("black")
+        ctx.fillRect(30,30,200,200)
+        ctx.draw()
+    },
     clear:function(){
         ctx.draw() //刷新屏幕 显示绘制效果
     },
@@ -90,6 +98,7 @@ Page({
         ctx.fillRect(50,50,250,250)
         ctx.draw()
     },
+    //设置透明
     translucent:function(){
         ctx.setFillStyle('red')
         ctx.setGlobalAlpha(0.2)//透明
