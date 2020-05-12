@@ -1,24 +1,9 @@
 <view class="box">
-  <view class='title'>动画演示</view>
-  <!-- 画布区域 -->
-  <view class="animation-area">
-    <view class="animation-element" animation="{{animation}}"></view>
-  </view>
-  <view class="btn-row">
-    <button bindtap="rotate" style="width:24%">旋转</button>
-    <button bindtap="scale" style='width:24%'>缩放</button>
-    <button bindtap="translate" style="width:24%">移动</button>
-    <button bindtap="skew" style="width:24%">倾斜</button>
-  </view>
-  <view class="btn-row">
-    <button bindtap="rotateAndScale" style="width:48%">旋转并缩放</button>
-    <button bindtap="rotateThenScale" style="width:48%">旋转并缩放</button>
-  </view>
-  <view class="btn-row">
-    <button bindtap="all" style="width:48%">同时展开全部</button>
-    <button bindtap="allInQueue" style="width:48%">顺序展开全部</button>
-  </view>
+  <view class='title'>照相和摄影</view>
   <view>
-    <button bindtap="reset" style="width:96%">还原</button>
+    <button type="primary" bindtap="chooseimage">获取图片</button>
+    <image mode="scaleToFill" src="{{imgPath}}"></image>
+    <button type="primary" bindtap="chooseVideo">获取视频</button>
+    <video class="video" src="{{videoPath}}"></video>
   </view>
 </view>
