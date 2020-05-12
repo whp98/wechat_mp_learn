@@ -1,10 +1,15 @@
 <view class="box">
-  <view class='title'>位置和地图</view>
-  <view>
-    <map id="myMap" latitude="{{latitude}}" longitude="longitude" markers="{{makers}}" show-location></map>
+  <view class='title'>文件操作</view>
+  <image src="{{imgPath}}"></image>
+  <view class="btnLayout">
+    <button type="primary" bindtap="openFile">打开文件</button>
+    <button type="primary" bindtap="saveFile">保存文件</button>
   </view>
   <view class="btnLayout">
-    <button bindtap="chooseLocation" type='primary'>选择位置</button>
-    <button bindtap="openLocation" type="primary">打开位置</button>
+    <button type="primary" bindtap="getSavedFileInfo">文件信息</button>
+    <button type="primary" bindtap="removedSavedFile">删除文件</button>
+  </view>
+  <view class="fileInfo" hidden="{{hidden}}">
+    <text>{{msg}}</text>
   </view>
 </view>
