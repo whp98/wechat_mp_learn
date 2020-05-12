@@ -1,22 +1,23 @@
 <view class="box">
-  <view class='title'>基本绘图</view>
+  <view class='title'>自由绘图</view>
+  <!-- 画布区域 -->
   <view>
-    <canvas canvas-id="myCanvas"></canvas>
+    <canvas canvas-id="myCanvas" disable-scroll="true" bindtouchstart="touchStart" bindtouchmove="touchMove" bindtouchend="touchEnd"></canvas>
   </view>
-  <view class="btnLayout">
-    <button type="primary" bindtap="clear">清除</button>
-    <button type="primary" bindtap="drawDot">画点</button>    
-    <button type="primary" bindtap="drawCircle">画圈</button>    
-  </view>
-  <view class="btnLayout">
-    <button type="primary" bindtap="drawDash">虚线</button>
-    <button type="primary" bindtap="capAndJoin">端点交点</button>    
-    <button type="primary" bindtap="drawText">画字</button>    
-  </view>
-  <view class="btnLayout">
-    <button type="primary" bindtap="circularGrad">圆形渐变</button>
-    <button type="primary" bindtap="shadowRect">阴影矩形</button>    
-    <button type="primary" bindtap="clear">半透明</button>    
-  </view>
-  
 </view>
+
+<!-- 绘图工具区 -->
+  <view class="toolStyle01">
+    <view class="toolStyle02">
+        <view class="toolStyle" hover-class="changeBc" bindtap='penSelect' data-param="5">钢笔</view>
+        <view class="toolStyle" hover-class="changeBc" bindtap='penSelect' data-param="15">毛笔</view>
+    </view>
+    <view class="toolStyle02">
+        <view class="toolStyle" hover-class="changeBc" bindtap='colorSelect' data-param="red">红色</view>
+        <view class="toolStyle" hover-class="changeBc" bindtap='colorSelect' data-param="blue">蓝色</view>
+    </view> 
+    <view class="toolStyle02">
+        <view class="toolStyle" hover-class="changeBc" bindtap='clear' >擦除</view>
+        <view class="toolStyle" hover-class="changeBc" bindtap='clearAll'>清理</view>
+    </view>   
+  </view>
