@@ -1,35 +1,12 @@
 /**index.wxss**/
-.animation-area{
-    /* 动画显示 */
-    display: flex;
+map{
+    margin: 10px 0px;
     width: 100%;
-    /* 内边距 */
-    padding-top: 150rpx;
-    padding-bottom: 150rpx;
-    /* 内容居中 */
-    justify-content: center;
-    /* 溢出的部分因隐藏 */
-    overflow: hidden;
-    background-color: #FFF;
-    border: 1px solid sandybrown;
-    margin-bottom: 10px;
+    height: 320px;
 }
 
-.animation-element{
-    /* 动画元素样式 */
-    width:200rpx;
-    height: 200rpx;
-    background-color: #1aad19;
-}
-
-.btn-row{
-    /* 横向布局，元素均匀分布 */
+.btnLayout{
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
-}
-
-button{
-    /* 外边距 */
-    margin: 5px;
+    justify-content: center;
 }

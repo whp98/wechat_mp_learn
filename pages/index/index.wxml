@@ -1,9 +1,10 @@
 <view class="box">
-  <view class='title'>照相和摄影</view>
+  <view class='title'>位置和地图</view>
   <view>
-    <button type="primary" bindtap="chooseimage">获取图片</button>
-    <image mode="scaleToFill" src="{{imgPath}}"></image>
-    <button type="primary" bindtap="chooseVideo">获取视频</button>
-    <video class="video" src="{{videoPath}}"></video>
+    <map id="myMap" latitude="{{latitude}}" longitude="longitude" markers="{{makers}}" show-location></map>
+  </view>
+  <view class="btnLayout">
+    <button bindtap="chooseLocation" type='primary'>选择位置</button>
+    <button bindtap="openLocation" type="primary">打开位置</button>
   </view>
 </view>

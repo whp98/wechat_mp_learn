@@ -1,35 +1,46 @@
 //index.js
 //创建画布上下文
 Page({
-    chooseimage:function(){
-        var that = this;
-        wx.chooseImage({
-            count:1,
-            sizeType:['original','compressed'],
-            sourceType:['album','camera'],
-            success:function(res){
-                that.setData({
-                    imgPath:res.tempFilePaths
-                })
+    data:{
+        latitude: 39.93111,
+        longitude: 116.199167,
+        markers: [
+            {
+                id: 1,
+                latitude: 39.93111,
+                longitude: 116.199167,
+                iconPath: '../images/1.jpeg',
+                label: {
+                    content: "我的位置",
+                    color: '#0000FF',
+                    bgColor: '#FFFF00',
+                    fontSize: 20
+                }
+            },{
+                latitude:39.92528,
+                longitude:116.20111,
+                iconPath: '../images/1.jpeg'
             }
+        ]
+    },
+    chooseLocation:function(){
+        wx.chooseLocation({
+            success: function(res) {
+                console.log(res)
+            },
         })
     },
-    chooseVideo:function(){
-        var that = this;
-        wx.chooseVideo({
-            sourceType:['album','camera'],
-            maxDuration:60,
-            camera:['front','back'],
-            success:function(res){
-                wx.showToast({
-                    title: res.tempFilePath,
-                    icon:'success',
-                    duration:2000
+    openLocation:function(){
+        wx.getLocation({
+            type:'gcj02',
+            success: function(res) {
+                wx.openLocation({
+                    latitude: res.latitude,
+                    longitude: res.longitude,
+                    scale:15
                 })
-                that.setData({
-                    videoPath:res.tempFilePath
-                })
-            }
+            },
         })
     }
+    
 })
