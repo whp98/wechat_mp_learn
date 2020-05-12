@@ -3,16 +3,23 @@
 var ctx = wx.createCanvasContext('myCanvas')
 Page({
     //加载之后绘制
-    onShow:function(){
-        const ctx = wx.createCanvasContext('myCanvas')
-        ctx.setStrokeStyle('black')
-        ctx.setLineWidth(1)
-        ctx.strokeRect(10, 10, 45, 25)
-        ctx.setLineWidth(2)
-        ctx.strokeRect(20, 20, 200, 100)
-        ctx.setLineWidth(3)
-        ctx.strokeRect(30, 30, 250, 120)
-        ctx.draw()         
+    onShow:function(options){             
+        this.drawSin()
+    },
+    //绘制一个点
+    drawDotX:function(x,y){
+        ctx.arc(x ,y ,5 ,0 , 2*Math.PI)
+        ctx.setFillStyle('black')
+        ctx.fill()
+        ctx.draw(true)
+    },
+    //描绘正弦曲线
+    drawSin:function(){
+        for(var x=0 ;x < 2*Math.PI; x += Math.PI/180){
+            var y=Math.sin(x);
+            this.drawDotX(30+x*30,80+y*30);
+            console.log(80 + y * 50)
+        }
     },
     clear:function(){
         ctx.draw() //刷新屏幕 显示绘制效果
@@ -81,7 +88,7 @@ Page({
         ctx.fillText('Hello World',80,80)
 
         ctx.setFillStyle('black')
-        ctx.rotate(30*Math.PI/180)//旋转字体
+        ctx.rotate(30*Math.PI/180) //旋转字体
         ctx.fillText("你好",150,80)
         ctx.draw()
     },
