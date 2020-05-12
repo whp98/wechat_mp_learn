@@ -1,23 +1,24 @@
 <view class="box">
-  <view class='title'>自由绘图</view>
+  <view class='title'>动画演示</view>
   <!-- 画布区域 -->
+  <view class="animation-area">
+    <view class="animation-element" animation="{{animation}}"></view>
+  </view>
+  <view class="btn-row">
+    <button bindtap="rotate" style="width:24%">旋转</button>
+    <button bindtap="scale" style='width:24%'>缩放</button>
+    <button bindtap="translate" style="width:24%">移动</button>
+    <button bindtap="skew" style="width:24%">倾斜</button>
+  </view>
+  <view class="btn-row">
+    <button bindtap="rotateAndScale" style="width:48%">旋转并缩放</button>
+    <button bindtap="rotateThenScale" style="width:48%">旋转并缩放</button>
+  </view>
+  <view class="btn-row">
+    <button bindtap="all" style="width:48%">同时展开全部</button>
+    <button bindtap="allInQueue" style="width:48%">顺序展开全部</button>
+  </view>
   <view>
-    <canvas canvas-id="myCanvas" disable-scroll="true" bindtouchstart="touchStart" bindtouchmove="touchMove" bindtouchend="touchEnd"></canvas>
+    <button bindtap="reset" style="width:96%">还原</button>
   </view>
 </view>
-
-<!-- 绘图工具区 -->
-  <view class="toolStyle01">
-    <view class="toolStyle02">
-        <view class="toolStyle" hover-class="changeBc" bindtap='penSelect' data-param="5">钢笔</view>
-        <view class="toolStyle" hover-class="changeBc" bindtap='penSelect' data-param="15">毛笔</view>
-    </view>
-    <view class="toolStyle02">
-        <view class="toolStyle" hover-class="changeBc" bindtap='colorSelect' data-param="red">红色</view>
-        <view class="toolStyle" hover-class="changeBc" bindtap='colorSelect' data-param="blue">蓝色</view>
-    </view> 
-    <view class="toolStyle02">
-        <view class="toolStyle" hover-class="changeBc" bindtap='clear' >擦除</view>
-        <view class="toolStyle" hover-class="changeBc" bindtap='clearAll'>清理</view>
-    </view>   
-  </view>
