@@ -1,15 +1,23 @@
 <view class="box">
-  <view class='title'>文件操作</view>
-  <image src="{{imgPath}}"></image>
+  <view class='title'>缓存操作</view>
+  <!-- 设置view组件布局并且添加两个按钮 -->
   <view class="btnLayout">
-    <button type="primary" bindtap="openFile">打开文件</button>
-    <button type="primary" bindtap="saveFile">保存文件</button>
+    <button type="primary" bindtap="setStorage">异步存储缓存</button>
+    <button type="primary" bindtap="setStorageSync">同步存储数据</button>
   </view>
   <view class="btnLayout">
-    <button type="primary" bindtap="getSavedFileInfo">文件信息</button>
-    <button type="primary" bindtap="removedSavedFile">删除文件</button>
+    <button type="primary" bindtap="getStorage">异步获取数据</button>
+    <button type="primary" bindtap="getStorageSync">同步获取数据</button>
   </view>
-  <view class="fileInfo" hidden="{{hidden}}">
+  <view class="btnLayout">
+    <button type="primary" bindtap="getStorageInfo">异步缓存信息</button>
+    <button type="primary" bindtap="getStorageInfoSync">同步缓存信息</button>
+  </view>
+  <view class="btnLayout">
+    <button type="primary" bindtap="removeStorage">异步删除数据</button>
+    <button type="primary" bindtap="removeStorageSync">同步删除数据</button>
+  </view>
+  <view class="storageInfo" hidden="{{hidden}}">
     <text>{{msg}}</text>
   </view>
 </view>
