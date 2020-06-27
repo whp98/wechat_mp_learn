@@ -1,62 +1,45 @@
-//index.js
+// pages/API/ScancodeAndMakephonecal/index.js
 Page({
-    startCompass: function() {
-      var that = this
-      wx.startCompass({ //启动罗盘传感器监听功能
-        success: function() {
-          wx.onCompassChange(function(res) { //监听罗盘传感器
-            that.setData({
-              resCompass: res  //res为回调函数的参数
-            })
-          })
-        }
-      })
-    },
-    stopCompass: function() {
+    name:'',    //定义联系人姓名
+    phone: '',  //定义联系人电话
+    scanCode: function() {
       var that = this;
-      wx.stopCompass({ //停止罗盘传感器监听功能
+      wx.scanCode({   //调用扫码API函数
+        onlyFromCamera: false,  //通过摄像头和调用相册图片都可以进行扫码
+        scanType: [], //不指定码的类型
         success: function(res) {
-          console.log('罗盘已经停止！')
-        }
-      })
-    },
-    startAcc: function() {
-      var that = this;
-      wx.startAccelerometer({ //启动加速度感器监听功能
-        success: function() {
-          wx.onAccelerometerChange(function(res) { //监听罗盘传感器
-            that.setData({
-              resAcc: res  //res为回调函数的参数
-            })
+          that.setData({
+            resCode: res  //获取扫码结果
           })
-        }
+        },
       })
     },
-    stopAcc: function() {
-      wx.stopAccelerometer({ //停止罗盘传感器监听功能
-        success: function(res) {
-          console.log('已停止加速度传感器监听！')
-        }
+    inputName: function(e) {
+      this.name = e.detail.value;  //获取联系人姓名
+    },
+    inputPhone: function(e) {
+      this.phone = e.detail.value;  //获取联系人电话
+    },
+    makeCall: function() {
+      let phone = this.phone;
+      wx.makePhoneCall({  //调用打电话API函数
+        phoneNumber: phone
       })
     },
-  
-    startGyroscope: function() {
-      var that = this;
-      wx.startGyroscope({ //启动陀螺仪传感器监听功能
-        success: function(res) {
-          wx.onGyroscopeChange(function(res) { //监听陀螺仪传感器
-            that.setData({
-              resGyroscope: res  //res为回调函数的参数
-            })
-          })
-        }
-      })
-    },
-    stopGyroscope: function() {
-      wx.stopGyroscope({ //停止陀螺仪传感器监听功能
-        success: function(res) {
-          console.log('已停止陀螺仪传感器监听！')
-        }
-      })
+    addPerson: function() {
+      let name = this.name;
+      let phone = this.phone;
+      if (name == '' || phone == '') {
+        wx.showToast({
+          title: '姓名和电话不能为空',
+          icon: 'none',
+          duration: 2000
+        })
+      } else {
+        wx.addPhoneContact({  //调用添加联系人API函数
+          firstName: name,
+          mobilePhoneNumber: phone
+        })
+      }
     }
   })
