@@ -1,11 +1,29 @@
-<view class="box">
-  <view class='title'>网络状态</view>
-  <view > 当前的网络状态是：{{status}}</view>
-  <button type="primary" bindtap="wifiStatus">WI-FI状态</button>
-  <view >
-    <view >SSID:{{res.SSID}}</view>
-    <view >BSSID:{{res.BSSID}}</view>
-    <view >安全性：{{res.secure}}</view>
-    <view >信号强度：{{res.signalStrength}}</view>
+<view class='box'>
+  <view class='title'>传感器</view>
+  <view class='btnLayout'>
+    <button type='primary' bindtap='startCompass'>启动罗盘监听</button>
+    <button type='primary' bindtap='stopCompass'>停止罗盘监听</button>
+  </view>
+  <view class='txtLayout'>
+    <view>罗盘方位角：{{resCompass.direction}}</view>
+    <view>罗盘精度：{{resCompass.accuracy}}</view>
+  </view>
+  <view class='btnLayout'>
+    <button type='primary' bindtap='startAcc'>启动加速度计</button>
+    <button type='primary' bindtap='stopAcc'>停止加速度计</button>
+  </view>
+  <view class='txtLayout'>
+    <view>X轴方向加速度：{{resAcc.x}}</view>
+    <view>Y轴方向加速度：{{resAcc.y}}</view>
+    <view>Z轴方向加速度：{{resAcc.z}}</view>
+  </view>
+  <view class='btnLayout'>
+    <button type='primary' bindtap='startGyroscope'>启动陀螺仪</button>
+    <button type='primary' bindtap='stopGyroscope'>停止陀螺仪</button>
+  </view>
+  <view class='txtLayout'>
+    <view>X轴方向角速度：{{resGyroscope.x}}</view>
+    <view>Y轴方向角速度：{{resGyroscope.y}}</view>
+    <view>Z轴方向角速度：{{resGyroscope.z}}</view>
   </view>
 </view>

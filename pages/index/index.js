@@ -1,43 +1,62 @@
 //index.js
-//创建画布上下文
-var tempFilePaths,tempFilePath;
 Page({
-    data:{
-        status:"获取中。。。。"
+    startCompass: function() {
+      var that = this
+      wx.startCompass({ //启动罗盘传感器监听功能
+        success: function() {
+          wx.onCompassChange(function(res) { //监听罗盘传感器
+            that.setData({
+              resCompass: res  //res为回调函数的参数
+            })
+          })
+        }
+      })
     },
-    //在这个函数里面获取网络类型
-    onLoad:function(options){
-        var that = this;
-        wx.getNetworkType({
-            success:function(res){
-                that.setData({
-                    status:res.networktType
-                })
-            }
-        })
-        wx.onNetworkStatusChange(function(res){
-            if(res.isConnected){
-                that.setData({
-                    status:res.networkType
-                })
-            }else{
-                that.setData({
-                    status:"未联网！"
-                })
-            }
-        })
+    stopCompass: function() {
+      var that = this;
+      wx.stopCompass({ //停止罗盘传感器监听功能
+        success: function(res) {
+          console.log('罗盘已经停止！')
+        }
+      })
     },
-    wifiStatus:function(){
-        var that = this;
-        wx.getConnectedWifi({
-            // 获取已经链接的WiFi
-            success:function(res){
-                that.setData({
-                    res:res.wifi
-                })
-                console.log(res);
-            }
-        })
+    startAcc: function() {
+      var that = this;
+      wx.startAccelerometer({ //启动加速度感器监听功能
+        success: function() {
+          wx.onAccelerometerChange(function(res) { //监听罗盘传感器
+            that.setData({
+              resAcc: res  //res为回调函数的参数
+            })
+          })
+        }
+      })
+    },
+    stopAcc: function() {
+      wx.stopAccelerometer({ //停止罗盘传感器监听功能
+        success: function(res) {
+          console.log('已停止加速度传感器监听！')
+        }
+      })
+    },
+  
+    startGyroscope: function() {
+      var that = this;
+      wx.startGyroscope({ //启动陀螺仪传感器监听功能
+        success: function(res) {
+          wx.onGyroscopeChange(function(res) { //监听陀螺仪传感器
+            that.setData({
+              resGyroscope: res  //res为回调函数的参数
+            })
+          })
+        }
+      })
+    },
+    stopGyroscope: function() {
+      wx.stopGyroscope({ //停止陀螺仪传感器监听功能
+        success: function(res) {
+          console.log('已停止陀螺仪传感器监听！')
+        }
+      })
     }
-
-})
+  })
