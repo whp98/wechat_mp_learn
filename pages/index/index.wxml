@@ -1,18 +1,18 @@
 <!--pages/API/ScancodeAndMakephonecal/index.wxml-->
 <view class='box'>
-  <view class='title'>扫码</view>
+  <!-- <view class='title'>扫码</view>
   <button type='primary' bindtap='scanCode'>开始扫码</button>
   <view class='txtLayout'>
     <text>字符集：{{resCode.charSet}}</text>
     <text>扫码类型：{{resCode.scanType}}</text>
     <text>扫码结果：{{resCode.result}}</text>
-  </view>
-  <!-- <view class='txtLayout'>
+  </view> -->
+  <view class='txtLayout'>
     <input placeholder='请输入联系人姓名' bindblur='inputName'></input>
     <input placeholder='请输入联系人电话' bindblur='inputPhone' type='number'></input>
   </view>
   <view class='btnLayout'>
     <button type='primary' bindtap='makeCall' style='width:45%'>拨打电话</button>
     <button type='primary' bindtap='addPerson' style='width:45%'>添加联系人</button>
-  </view> -->
+  </view>
 </view>
