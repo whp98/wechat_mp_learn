@@ -1,18 +1,18 @@
-.border {
-  border: 1px solid seagreen;
-}
+/* pages/API/NavigationBar/index.wxss */
 
-view {
-  margin: 8px;
+input {
+  border-bottom: 1px solid blue; /* 设置input组件下边框线1px，实线、蓝色 */
+  margin: 30rpx 20rpx; /* 设置上下外边距30rpx，左右外边距20rpx */
 }
 
 .btnLayout {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
+  /* 设置button组件的布局 */
+  display: flex; /* 设置布局方式为flex */
+  flex-direction: row; /* 设置水平方向为主轴方向 */
+  justify-content: space-around; /* 设置组件沿主轴方向平均分布，两边留有一半的间隔空间 */
+  margin-bottom: 20rpx; /* 设置下边距为20rpx */
 }
 
 button {
-  width: 45%;
-  margin: 5px;
+  width: 45%; /* 组件宽度为45% */
 }

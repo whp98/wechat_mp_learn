@@ -1,35 +1,12 @@
-<!--pages/API/DeviceInfo/index.wxml-->
 <view class='box'>
-  <view class='title'>{{msg}}获取您的设备信息</view>
-  <view class='border' hidden='{{hide1}}'>
-    <view>手机型号：{{model}}</view>
-    <view>设备像素比：{{pixelRatio}}</view>
-    <view>屏幕宽度：{{screenWidth}}</view>
-    <view>屏幕高度：{{screenHeight}}</view>
-    <view>窗口宽度：{{windowWidth}}</view>
-    <view>窗口高度：{{windowHeight}}</view>
-    <view>微信语言：{{language}}</view>
-    <view>微信版本：{{version}}</view>
-    <view>操作系统版本：{{system}}</view>
-    <view>客户端平台：{{platform}}</view>
-    <view>客户端基础库版本：{{SDKVersion}}</view>
-  </view>
-
-  <view class='border' hidden='{{hide2}}'>
-    <view>手机型号：{{model}}</view>
-    <view>设备像素比：{{pixelRatio}}</view>
-    <view>屏幕宽度：{{screenWidth}}</view>
-    <view>屏幕高度：{{screenHeight}}</view>
-    <view>窗口宽度：{{windowWidth}}</view>
-    <view>窗口高度：{{windowHeight}}</view>
-    <view>微信语言：{{language}}</view>
-    <view>微信版本：{{version}}</view>
-    <view>操作系统版本：{{system}}</view>
-    <view>客户端平台：{{platform}}</view>
-    <view>客户端基础库版本：{{SDKVersion}}</view>
+  <view class='title'>导航条</view>
+  <input placeholder='请输入导航条新标题' bindblur='inputTitle'></input>
+  <view class='btnLayout'>
+    <button type='primary' bindtap='setNavigationBarTitle'>设置标题</button>
+    <button type='primary' bindtap='setNavigationBarColor'>设置颜色</button>
   </view>
   <view class='btnLayout'>
-    <button type='primary' bindtap='getSystemInfoSync'>同步获取</button>
-    <button type='primary' bindtap='getSystemInfo'>异步获取</button>
+    <button type='primary' bindtap='showNavigationBarLoading'>加载动画</button>
+    <button type='primary' bindtap='hideNavigationBarLoding'>停止动画</button>
   </view>
 </view>

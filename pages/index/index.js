@@ -1,56 +1,34 @@
-// pages/API/DeviceInfo/index.js
+// pages/API/NavigationBar/index.js
 Page({
   data: {
-    hide1: false,
-    hide2: true
+    title: '' //初始化title
   },
-  getSystemInfo: function() { //异步获取设备信息
-    var that = this;
-    wx.getSystemInfo({
-      success: (res) => {
-        that.setData({
-          msg: '异步',
-          hide1: false,
-          hide2: true,
-          model: res.model,
-          pixelRatio: res.pixelRatio,
-          screenWidth: res.screenWidth,
-          screenHeight: res.screenHeight,
-          windowWidth: res.windowWidth,
-          windowHeight: res.windowHeight,
-          language: res.language,
-          version: res.version,
-          system: res.system,
-          platform: res.platform,
-          SDKVersion: res.SDKVersion
-        })
-      },
+  inputTitle: function(e) {
+    this.setData({
+      title: e.detail.value //将input组件的value值赋值给title
     })
   },
-
-  getSystemInfoSync: function() {
-    var that = this;
-    try {
-      var res = wx.getSystemInfoSync();
-      that.setData({
-        msg: '同步',
-        hide1: true,
-        hide2: false,
-        model: res.model,
-        pixelRatio: res.pixelRatio,
-        screenWidth: res.screenWidth,
-        screenHeight: res.screenHeight,
-        windowWidth: res.windowWidth,
-        windowHeight: res.windowHeight,
-        language: res.language,
-        version: res.version,
-        system: res.system,
-        platform: res.platform,
-        SDKVersion: res.SDKVersion
-      })
-    } catch (e) {
-      console.log(e)
-    }
+  setNavigationBarTitle: function() {
+    let title = this.data.title;
+    wx.setNavigationBarTitle({ //设置导航栏标题文本
+      title: title //将局部变量title赋值给函数参数title（导航条标题）
+    })
+  },
+  
+  setNavigationBarColor: function() {
+    wx.setNavigationBarColor({ //设置导航条颜色
+      frontColor: '#ffffff', //前景色
+      backgroundColor: '#ff0000', //背景色
+      animation: {
+        duration: 4000, //动画时长
+        timingFunc: 'easeInOut' //动画方式
+      }
+    })
+  },
+  showNavigationBarLoading: function() {
+    wx.showNavigationBarLoading() //显示加载动画
+  },
+  hideNavigationBarLoding: function() {
+    wx.hideNavigationBarLoading() //隐藏加载动画
   }
-
 })
