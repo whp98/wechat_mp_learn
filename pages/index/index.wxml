@@ -1,14 +1,14 @@
+<!--pages/API/Brightness/index.wxml-->
 <view class='box'>
-  <view class='title'>屏幕亮度</view>
-  <view>设置屏幕亮度</view>
-  <!--由于亮度的范围是0—1，因此设置slider的max、min和step属性，value属性表示组件的当前位置-->
+  <view class='title'>震动</view>
+  <!-- <view>设置屏幕亮度</view>
   <slider min='0' max='1' value='0.5' step='0.1' show-value='true' bindchange='setScreenBrightness'>
   </slider>
 
   <button type='primary' bindtap='getScreenBrightness'>查询亮度</button>
   
-  <view>当前亮度为：{{brightness}}</view>
-  <switch bindchange='setKeepScreenOn'>保持亮度</switch>
-  <button type='primary' bindtap='copyBrightness'>复制亮度</button>
-  <view>复制的亮度为：{{copyBrightness}}</view>
+  <view>当前亮度为：{{brightness}}</view> -->
+  <switch bindchange='setKeepScreenOn'>震动</switch>
+  <!-- <button type='primary' bindtap='copyBrightness'>复制亮度</button>
+  <view>复制的亮度为：{{copyBrightness}}</view> -->
 </view>
