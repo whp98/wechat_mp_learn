@@ -1,4 +1,18 @@
+.border {
+  border: 1px solid seagreen;
+}
 
-view, slider, button, switch {
-  margin: 20rpx;
+view {
+  margin: 8px;
+}
+
+.btnLayout {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+button {
+  width: 45%;
+  margin: 5px;
 }

@@ -1,14 +1,35 @@
-<!--pages/API/Brightness/index.wxml-->
+<!--pages/API/DeviceInfo/index.wxml-->
 <view class='box'>
-  <view class='title'>震动</view>
-  <!-- <view>设置屏幕亮度</view>
-  <slider min='0' max='1' value='0.5' step='0.1' show-value='true' bindchange='setScreenBrightness'>
-  </slider>
+  <view class='title'>{{msg}}获取您的设备信息</view>
+  <view class='border' hidden='{{hide1}}'>
+    <view>手机型号：{{model}}</view>
+    <view>设备像素比：{{pixelRatio}}</view>
+    <view>屏幕宽度：{{screenWidth}}</view>
+    <view>屏幕高度：{{screenHeight}}</view>
+    <view>窗口宽度：{{windowWidth}}</view>
+    <view>窗口高度：{{windowHeight}}</view>
+    <view>微信语言：{{language}}</view>
+    <view>微信版本：{{version}}</view>
+    <view>操作系统版本：{{system}}</view>
+    <view>客户端平台：{{platform}}</view>
+    <view>客户端基础库版本：{{SDKVersion}}</view>
+  </view>
 
-  <button type='primary' bindtap='getScreenBrightness'>查询亮度</button>
-  
-  <view>当前亮度为：{{brightness}}</view> -->
-  <switch bindchange='setKeepScreenOn'>震动</switch>
-  <!-- <button type='primary' bindtap='copyBrightness'>复制亮度</button>
-  <view>复制的亮度为：{{copyBrightness}}</view> -->
+  <view class='border' hidden='{{hide2}}'>
+    <view>手机型号：{{model}}</view>
+    <view>设备像素比：{{pixelRatio}}</view>
+    <view>屏幕宽度：{{screenWidth}}</view>
+    <view>屏幕高度：{{screenHeight}}</view>
+    <view>窗口宽度：{{windowWidth}}</view>
+    <view>窗口高度：{{windowHeight}}</view>
+    <view>微信语言：{{language}}</view>
+    <view>微信版本：{{version}}</view>
+    <view>操作系统版本：{{system}}</view>
+    <view>客户端平台：{{platform}}</view>
+    <view>客户端基础库版本：{{SDKVersion}}</view>
+  </view>
+  <view class='btnLayout'>
+    <button type='primary' bindtap='getSystemInfoSync'>同步获取</button>
+    <button type='primary' bindtap='getSystemInfo'>异步获取</button>
+  </view>
 </view>
