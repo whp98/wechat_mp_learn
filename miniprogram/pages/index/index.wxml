@@ -1,18 +1,25 @@
 <!--pages/index/index.wxml-->
+
 <view class='box'>
-  <view class='title'>获取OpenID</view>
-	<block wx:if="{{!hasUserInfo}}">
-		<button wx:if="{{canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
-		<text wx:else> 请升级微信版本，使用1.3.0或以上的基础库以支持open-type按钮获取用户公开信息！ </text>
-	</block>
-  <view wx:else class='userinfo'>
-      <image bindtap='getDetail' class='userinfo-avatar' src='{{userInfo.avatarUrl}}' mode='cover'></image>
-      <text class='userinfo-nickname'>{{userInfo.nickName}}</text>
+  <view class='title'>文件上传/下载</view>
+  <view class="Hcontainer">
+    <button type='primary' bindtap="doUpload">上传图片</button>
+    <button type='primary' wx:if="{{uploadSuccess}}" bindtap="doDownload">下载图片</button>
   </view>
-  <view class='user-openid'>
-    <text>{{openID}}</text>
+  <view wx:if="{{uploadSuccess}}" class="list">
+    <text class="list-title">上传成功</text>
+    <view class="list-item">
+      <text>文件 ID：{{fileID}}</text>
+    </view>
+    <view class="list-item">
+      <text>云文件路径：{{cloudPath}}</text>
+    </view>
   </view>
-  <view class='user-detail' wx:if='{{hasUserInfo}}'>
-    <text>{{detail}}</text>
+  <view wx:if='{{downloadSuccess}}' class="list">
+    <text class="list-title">下载成功</text>
+    <text class='list-text'>点击缩略图可预览图片</text>
+    <view class='image-container'>
+      <image src="{{downloadedFilePath}}" mode="aspectFit" bindtap="previewImg"></image>
+    </view>
   </view>
 </view>

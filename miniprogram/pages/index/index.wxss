@@ -1,31 +1,64 @@
 /* pages/index/index.wxss */
-page{
-  font-size: 14px;
+
+.Hcontainer {
+  margin: 100rpx 0rpx 50rpx;
+  padding: 0 50rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
 }
-.userinfo {
+
+.opButton {
+  color: white;
+  background-color: #0f0;
+  border-radius: 10px;
+}
+
+.list {
+  margin-top: 40rpx;
+  width: 100%;
+  padding: 0 40rpx;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-left: none;
+  border-right: none;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  box-sizing: border-box;
+}
+
+.list-title {
+  margin: 20rpx;
+  color: black;
+  font-size: 28px;
+  font-style: bold;
+  display: block;
+}
+
+.list-item {
+  width: 100%;
+  padding: 10rpx;
+  font-size: 16px;
+  color: #007aff;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  box-sizing: border-box;
+}
+
+.list-text {
+  color: red;
+  font-size: 12px;
+  display: block;
+}
+
+.image-container {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-.userinfo-avatar {
-  width: 128rpx;
-  height: 128rpx;
-  margin: 20rpx;
-  border-radius: 50%;
-}
-
-.userinfo-nickname {
-  color: #aaa;
-}
-
-.user-openid {
-  margin: 60rpx 30rpx;
-  color:blue;
-}
-
-.user-detail{
-  margin: 60rpx 30rpx;
-  text-align: left;
-  color: black
+.image-container image {
+  max-width: 30%;
+  max-height: 10vh;
+  margin-top: 20rpx;
+  border: 1px solid #e0e0e0;
 }
