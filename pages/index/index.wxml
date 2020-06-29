@@ -1,24 +1,7 @@
-<!--pages/index/index.wxml-->
+<!--pages/API/ActionSheet/index.wxml-->
 <view class='box'>
-  <view class='title'>TabBar设置</view>
-  <view class='btnLayout'>
-    <button type='primary' bindtap='showTabBar'>显示标签</button>
-    <button type='primary' bindtap='hideTabBar'>隐藏标签</button>
-  </view>
-  <view class='btnLayout'>
-    <button type='primary' bindtap='setTabBarBadge'>设置标记</button>
-    <button type='primary' bindtap='removeTabBarBadge'>删除标记</button>
-  </view>
-  <view class='btnLayout'>
-    <button type='primary' bindtap='showTabBarRedDot'>显示红点</button>
-    <button type='primary' bindtap='hideTabBarRedDot'>隐藏红点</button>
-  </view>
-  <view class='btnLayout'>
-    <button type='primary' bindtap='setTabBarStyle'>设置整体样式</button>
-    <button type='primary' bindtap='setTabBarItem'>设置单项样式</button>
-  </view>
-  <button type='primary' bindtap='reset' style='width:95%;'>还原标签栏样式</button>
-
+  <view class='title'>ActionSheet示例</view>
+  <button type='primary' bindtap='showActionSheet'>显示ActionSheet</button>
+  <view>你点击的菜单项下标是：{{tapIndex}}</view>
+  <view>你点击的菜单项是：{{tapItem}}</view>
 </view>
-
-
