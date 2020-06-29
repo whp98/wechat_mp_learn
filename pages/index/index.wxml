@@ -1,7 +1,0 @@
-<!--pages/API/ActionSheet/index.wxml-->
-<view class='box'>
-  <view class='title'>ActionSheet示例</view>
-  <button type='primary' bindtap='showActionSheet'>显示ActionSheet</button>
-  <view>你点击的菜单项下标是：{{tapIndex}}</view>
-  <view>你点击的菜单项是：{{tapItem}}</view>
-</view>

@@ -1,5 +1,0 @@
-/* pages/API/ActionSheet/index.wxss */
-
-button, view {
-  margin: 20px;
-}

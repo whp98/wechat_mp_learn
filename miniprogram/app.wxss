@@ -1,0 +1,14 @@
+/**app.wxss**/
+
+.box { /**定义用于设置边框的样式**/
+  margin: 20rpx; /**外边距**/
+  padding: 20rpx; /**内边距**/
+  border: 1px solid silver; /**边框1px、实线、银灰色**/
+}
+
+.title {  /**定义用于设置标题的样式**/
+  font-size: 25px; /**字体大小为25px**/
+  text-align: center; /**文本水平对齐方式为居中**/
+  margin-bottom: 15px; /**下外边距为15px**/
+  color: red; /**颜色为红色**/
+}

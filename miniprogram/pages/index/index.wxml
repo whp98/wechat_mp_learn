@@ -1,0 +1,18 @@
+<!--pages/index/index.wxml-->
+<view class='box'>
+  <view class='title'>获取OpenID</view>
+	<block wx:if="{{!hasUserInfo}}">
+		<button wx:if="{{canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
+		<text wx:else> 请升级微信版本，使用1.3.0或以上的基础库以支持open-type按钮获取用户公开信息！ </text>
+	</block>
+  <view wx:else class='userinfo'>
+      <image bindtap='getDetail' class='userinfo-avatar' src='{{userInfo.avatarUrl}}' mode='cover'></image>
+      <text class='userinfo-nickname'>{{userInfo.nickName}}</text>
+  </view>
+  <view class='user-openid'>
+    <text>{{openID}}</text>
+  </view>
+  <view class='user-detail' wx:if='{{hasUserInfo}}'>
+    <text>{{detail}}</text>
+  </view>
+</view>
