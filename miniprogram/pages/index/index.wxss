@@ -1,64 +1,86 @@
 /* pages/index/index.wxss */
 
+.preNote {
+  padding: 20px;
+  font-size: 32rpx;
+  line-height: 40rpx;
+  color: #666;
+  box-sizing: border-box;
+}
+
 .Hcontainer {
-  margin: 100rpx 0rpx 50rpx;
+  margin: 20rpx 0rpx;
   padding: 0 50rpx;
   display: flex;
   flex-direction: row;
   justify-content: space-around;
 }
 
-.opButton {
+.DBbutton {
+  width: 100rpx;
   color: white;
-  background-color: #0f0;
-  border-radius: 10px;
+  background-color: blue;
 }
 
-.list {
-  margin-top: 40rpx;
-  width: 100%;
-  padding: 0 40rpx;
-  border: 1px solid rgba(0, 0, 0, 0.1);
-  border-left: none;
-  border-right: none;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
+.record-op {
+  margin: 10rpx;
+  padding: 20rpx;
   box-sizing: border-box;
 }
 
-.list-title {
+.op-note {
+  color: #000;
+  font-size: 14px;
+}
+
+.content-input {
+  width: 90%;
+  padding: 20rpx;
   margin: 20rpx;
-  color: black;
-  font-size: 28px;
-  font-style: bold;
-  display: block;
-}
-
-.list-item {
-  width: 100%;
-  padding: 10rpx;
-  font-size: 16px;
-  color: #007aff;
-  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  min-height: 200rpx;
+  border: 1px solid #ccc;
   box-sizing: border-box;
 }
 
-.list-text {
+.op-result {
+  padding: 10rpx;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+}
+
+.op-result .headline {
+  margin-top: 50rpx;
+  font-size: 40rpx;
+  font-weight: bold;
+  color: blue;
+}
+
+.op-result .text-title {
+  margin-top: 20rpx;
+  margin-bottom: 10rpx;
+  padding-left: 20rpx;
+  padding-right: 20rpx;
+  font-size: 14px;
   color: red;
-  font-size: 12px;
+}
+
+.op-result .list {
+  margin-top: 20rpx;
+  font-size: 28rpx;
+  color: black;
   display: block;
 }
 
-.image-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+.line-input {
+  min-height: 30px;
+  line-height: 20px;
+  width: 100%;
+  padding: 5px;
+  margin: 10px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
 }
 
-.image-container image {
-  max-width: 30%;
-  max-height: 10vh;
-  margin-top: 20rpx;
-  border: 1px solid #e0e0e0;
-}

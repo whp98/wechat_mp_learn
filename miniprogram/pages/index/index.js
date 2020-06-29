@@ -5,110 +5,227 @@ Page({
    * 页面的初始数据
    */
   data: {
-    fileID: '', // 上传文件的ID
-    cloudPath: '', // 上传文件的云端路径
-    imagePath: '', // 上传图片的本地临时路径
-    downloadedFilePath: '', // 图片下载后的本地临时路径
-    uploadSuccess: false, // 文件是否上传成功的标记
-    downloadSuccess: false // 文件是否下载成功的标记
+    opName: "", // 数据库操作名称，如‘add’‘qry’等等
+    opResult: "", // 数据库操作结果字符串
+    opResult2: "", // 数据库操作结果字符串2
+    resData: null, // 数据库操作结果数据
+    resData2: null, // 数据库操作结果数据2
+    finished: false // 数据库操作是否完成的标记
   },
-  // 图片上传事件函数
-  doUpload: function() {
-    var that = this;
-    const fileID = this.data.fileID;
-    if (fileID != '') { // 如果之前上传了图片（fileID不为空）则删除之
-      wx.cloud.deleteFile({
-        fileList: [fileID] // 要删除的文件ID的数组
+  // “增”按钮点击事件函数
+  addRecord: function() {
+    this.setData({
+      opName: "add",
+      finished: false
+    })
+  },
+  // “删”按钮点击事件函数
+  deleteRecord: function() {
+    this.setData({
+      opName: "del",
+      finished: false
+    })
+  },
+  // “改”按钮点击事件函数
+  updateRecord: function() {
+    this.setData({
+      opName: "upd",
+      finished: false
+    })
+  },
+  // “查”按钮点击事件函数
+  queryRecord: function() {
+    this.setData({
+      opName: "qry",
+      finished: false
+    })
+  },
+  // 拼接日期字符串的函数
+  makeDateString: function(dateObj) {
+    return dateObj.getFullYear() + '-' + (dateObj.getMonth() + 1) + '-' + dateObj.getDate();
+  },
+  // 拼接时间字符串的函数
+  makeTimeString: function(dateObj) {
+    return dateObj.getHours() + ':' + dateObj.getMinutes() + ':' + dateObj.getSeconds();
+  },
+  // 添加记录事件函数
+  doAdd: function(e) {
+    console.log(e)
+    var workContent = e.detail.value.workContent
+    if (workContent != "") { // 如果用户输入内容不为空
+      const db = wx.cloud.database() // 调用接口返回云开发数据库引用保存在常量db中
+      var myDate = new Date()
+      db.collection('work_done').add({ // 向集合‘work_done’中添加一条记录
+        data: { // 一条记录的字段数据
+          date: this.makeDateString(myDate), // 日期字符串
+          time: this.makeTimeString(myDate), // 时间字符串
+          content: workContent // 工作内容字符串
+        },
+        complete: res => { // 操作完成时的回调函数
+          this.setData({
+            finished: true
+          })
+        },
+        success: res => { // 操作成功时的回调函数
+          // 在返回结果中会包含新创建的记录的 _id
+          this.setData({
+            opResult: "操作完成，新增一条记录，_id为：\n ",
+            resData: res._id
+          })
+          wx.showToast({
+            title: '新增记录成功',
+          })
+          console.log('[数据库] [新增记录] 成功，记录 _id: ', res._id)
+        },
+        fail: err => { // 操作失败时的回调函数
+          wx.showToast({
+            icon: 'none',
+            title: '新增记录失败'
+          })
+          console.error('[数据库] [新增记录] 失败：', err)
+        }
+      })
+    } else {
+      wx.showToast({
+        title: '请输入事情描述！',
       })
     }
-    // 选择图片
-    wx.chooseImage({ // 调用接口选择图片
-      count: 1, // 图片数量
-      sizeType: ['compressed'], // 尺寸类型
-      sourceType: ['album', 'camera'], // 图片来源
-      success: function(res) { // 调用成功时的回调函数
-        wx.showLoading({ // 显示加载提示框
-          title: '上传中',
-        })
-        const filePath = res.tempFilePaths[0] // 保存上传文件的临时路径
-        console.log("filePath:", filePath)
-        // 上传图片
-        const cloudPath = 'img' + Date.now() + filePath.match(/\.[^.]+?$/)[0]
-        wx.cloud.uploadFile({ // 调用接口上传文件
-          cloudPath, // 文件的云端路径
-          filePath, // 文件的本地临时路径
-          success: res => { // 调用成功时的回调函数
-            console.log('[上传文件] 成功：', res)
-            that.setData({ // 设置页面绑定数据
-              uploadSuccess: true,
-              downloadSuccess: false,
-              fileID: res.fileID,
-              cloudPath: cloudPath,
-              imagePath: filePath,
-              downloadedFilePath: ''
-            })
-          },
-          fail: e => { // 调用失败时的回调函数
-            console.error('[上传文件] 失败：', e);
-            that.setData({ // 设置页面绑定数据
-              uploadSuccess: false,
-              fileID: '',
-              cloudPath: '',
-              imagePath: ''
-            })
-            wx.showToast({ // 显示消息提示框
-              icon: 'none',
-              title: '上传失败',
-            })
-          },
-          complete: () => { // 调用完成时的回调函数
-            wx.hideLoading() // 隐藏加载提示框
-          }
-        })
-      },
-      fail: e => { // 调用失败时的回调函数
-        console.error(e)
-      }
-    })
   },
-  // 图片下载事件函数
-  doDownload: function() {
-    var that = this;
-    wx.showLoading({ // 显示加载提示框
-      title: '下载中',
-    })
-    wx.cloud.downloadFile({ // 调用接口下载文件
-      fileID: that.data.fileID, // 云端文件ID
-      success: res => { // 调用成功时的回调函数
-        console.log("下载文件成功: ", res)
-        that.setData({ // 设置页面绑定数据
-          downloadSuccess: true,
-          downloadedFilePath: res.tempFilePath
-        })
-        wx: wx.showModal({ // 显示模态对话框
-          title: '文件下载成功',
-          content: '文件路径：' + that.data.downloadedFilePath,
-          showCancel: false,
-          confirmText: '确定',
-          confirmColor: '#0000ff',
-        })
-      },
-      fail: err => { // 调用失败时的回调函数
-        that.setData({ // 设置页面绑定数据
-          downloadSuccess: false,
-          downloadedFilePath: ''
-        })
-      },
-      complete: () => { // 调用完成时的回调函数
-        wx.hideLoading() // 隐藏加载提示框
-      }
-    })
+  // 删除记录事件函数
+  doDelete: function(e) {
+    console.log(e)
+    var that = this
+    var itemID = e.detail.value.itemID
+    if (itemID != "") { // 如果用户输入的记录id不为空
+      const db = wx.cloud.database() // 调用接口返回云开发数据库引用保存在常量db中
+      db.collection('work_done').doc(itemID).get({ // 从集合‘work_done’中查询id为itemID的记录
+        success: res => { // 操作成功时的回调函数
+          console.log(res)
+          this.setData({
+            opResult: '查询记录成功：\n',
+            resData: res.data
+          })
+          db.collection('work_done').doc(itemID).remove({ // 操作接口从集合‘work_done’中删除这条记录
+            complete: res => { // 操作完成时的回调函数
+              that.setData({
+                finished: true
+              })
+            },
+            success: res => { // 操作成功时的回调函数
+              console.log('[数据库] [删除记录] 成功: ', res)
+              that.setData({
+                opResult2: '已成功删除上面的记录。'
+              })
+            },
+            fail: err => { // 操作失败时的回调函数
+              wx.showToast({
+                icon: 'none',
+                title: '删除记录失败'
+              })
+              console.error('[数据库] [删除记录] 失败：', err)
+            }
+          })
+        },
+        fail: err => { // 操作失败时的回调函数
+          wx.showToast({
+            icon: 'none',
+            title: '查询记录失败'
+          })
+          console.error('[数据库] [查询记录] 失败：', err)
+        }
+      })
+    } else {
+      wx.showToast({
+        title: '请输入itemID！',
+      })
+    }
   },
-  // 图片预览事件函数
-  previewImg: function() {
-    wx.previewImage({ // 调用接口预览图片
-      current: '', // 当前显示图片的http链接
-      urls: [this.data.downloadedFilePath] // 需要预览的图片url的数组
-    })
+  // 更新记录事件函数
+  doUpdate: function(e) {
+    console.log(e)
+    var that = this
+    var itemID = e.detail.value.itemID
+    var workContent = e.detail.value.workContent
+    if (itemID != "") { // 如果用户输入的记录id不为空
+      const db = wx.cloud.database() // 调用接口返回云开发数据库引用保存在常量db中
+      db.collection('work_done').doc(itemID).get({ // 从集合‘work_done’中查询id为itemID的记录
+        success: res => { // 操作成功时的回调函数
+          this.setData({
+            opResult: '查询记录成功：\n',
+            resData: res.data
+          })
+          db.collection('work_done').doc(itemID).update({ // 更新集合‘work_done’中的这条记录
+            data: {
+              content: workContent,
+            },
+            complete: res => { // 操作完成时的回调函数
+              that.setData({
+                finished: true
+              })
+            },
+            success: res => { // 操作成功时的回调函数
+              console.log('[数据库] [更新记录] 成功: ', res)
+              that.setData({
+                opResult2: '已成功更新上面的记录内容为：\n',
+                resData2: workContent
+              })
+            },
+            fail: err => { // 操作失败时的回调函数
+              wx.showToast({
+                icon: 'none',
+                title: '更新记录失败'
+              })
+              console.error('[数据库] [更新记录] 失败：', err)
+            }
+          })
+        },
+        fail: err => { // 操作失败时的回调函数
+          wx.showToast({
+            icon: 'none',
+            title: '查询记录失败'
+          })
+          console.error('[数据库] [查询记录] 失败：', err)
+        }
+      })
+    } else {
+      wx.showToast({
+        title: '请输入itemID！',
+      })
+    }
+  },
+  // 查询记录事件函数
+  doQuery: function(e) {
+    console.log(e)
+    var workDate = e.detail.value.workDate
+    if (workDate != "") { // 如果用户输入的日期字符串不为空
+      const db = wx.cloud.database() // 调用接口返回云开发数据库引用保存在常量db中
+      db.collection('work_done').where({ // 从集合‘work_done’中查询记录（最多二十条）
+        date: workDate // 记录创建日期
+      }).get({
+        complete: res => { // 操作完成时的回调函数
+          this.setData({
+            finished: true
+          })
+        },
+        success: res => { // 操作成功时的回调函数
+          this.setData({
+            opResult: "操作完成，查询到" + res.data.length + "条记录：\n ",
+            resData: res.data
+          })
+          console.log('[数据库] [查询记录] 成功: ', res)
+        },
+        fail: err => { // 操作失败时的回调函数
+          wx.showToast({
+            icon: 'none',
+            title: '查询记录失败'
+          })
+          console.error('[数据库] [查询记录] 失败：', err)
+        }
+      })
+    } else {
+      wx.showToast({
+        title: '请输入查询日期！',
+      })
+    }
   }
 })

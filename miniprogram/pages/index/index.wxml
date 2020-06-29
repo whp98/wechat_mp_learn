@@ -1,25 +1,78 @@
 <!--pages/index/index.wxml-->
-
-<view class='box'>
-  <view class='title'>文件上传/下载</view>
+<view class="box">
+  <view class='title'>数据库操作</view>
+  <text class="preNote">请点击相应按钮，实现在数据库中增加、删除、更新或查询记录的操作。。。</text>
   <view class="Hcontainer">
-    <button type='primary' bindtap="doUpload">上传图片</button>
-    <button type='primary' wx:if="{{uploadSuccess}}" bindtap="doDownload">下载图片</button>
+    <button class='DBbutton' bindtap="addRecord" style='background-color: {{opName=="add"?"#ae57a4":"blue"}}'>增</button>
+    <button class='DBbutton' bindtap="deleteRecord" style='background-color: {{opName=="del"?"#ae57a4":"blue"}}'>删</button>
+    <button class='DBbutton' bindtap="updateRecord" style='background-color: {{opName=="upd"?"#ae57a4":"blue"}}'>改</button>
+    <button class='DBbutton' bindtap="queryRecord" style='background-color: {{opName=="qry"?"#ae57a4":"blue"}}'>查</button>
   </view>
-  <view wx:if="{{uploadSuccess}}" class="list">
-    <text class="list-title">上传成功</text>
-    <view class="list-item">
-      <text>文件 ID：{{fileID}}</text>
+  <view wx:if="{{opName=='add'}}">
+    <!-- 新增记录 -->
+    <view class="record-op" style='{{opName!=""?"border: 1px solid #00007f":""}}'>
+      <form bindsubmit='doAdd'>
+        <text class="op-note">添加一件今日已完成的工作：</text>
+        <textarea name="workContent" class="content-input" maxlength="50" placeholder="事情描述（不超过50个字）" auto-height adjust-position cursor-spacing='20px'></textarea>
+        <button form-type='submit' type='primary'>确定</button>
+      </form>
     </view>
-    <view class="list-item">
-      <text>云文件路径：{{cloudPath}}</text>
+    <view wx:if="{{finished}}" class="op-result">
+      <text class="headline">操作结果信息：</text>
+      <text class='text-title'>{{opResult}}</text>
+      <text class="list" selectable>{{resData}}</text>
     </view>
   </view>
-  <view wx:if='{{downloadSuccess}}' class="list">
-    <text class="list-title">下载成功</text>
-    <text class='list-text'>点击缩略图可预览图片</text>
-    <view class='image-container'>
-      <image src="{{downloadedFilePath}}" mode="aspectFit" bindtap="previewImg"></image>
+  <view wx:if="{{opName=='del'}}">
+    <!-- 删除记录 -->
+    <view class="record-op" style='{{opName!=""?"border: 1px solid #00007f":""}}'>
+      <form bindsubmit='doDelete'>
+        <text class="op-note">指定删除item的ID：</text>
+        <input name="itemID" class="line-input" maxlength="32" placeholder="itemID（32位字符串）" />
+        <button form-type='submit' type='primary'>确定</button>
+      </form>
+    </view>
+    <view wx:if="{{finished}}" class="op-result">
+      <text class="headline">操作结果信息：</text>
+      <text class='text-title'>{{opResult}}</text>
+      <text class="list" selectable>{{resData._id}}：{{resData.date}} {{resData.time}} {{resData.content}}</text>
+      <text class='text-title'>{{opResult2}}</text>
+    </view>
+  </view>
+  <view wx:if="{{opName=='upd'}}">
+    <!-- 更新记录 -->
+    <view class="record-op" style='{{opName!=""?"border: 1px solid #00007f":""}}'>
+      <form bindsubmit='doUpdate'>
+        <text class="op-note">指定更新item的ID：</text>
+        <input name="itemID" class="line-input" maxlength="32" placeholder="itemID（32位字符串）" />
+        <text class="op-note">输入更新的内容：</text>
+        <textarea name="workContent" class="content-input" maxlength="50" placeholder="事情描述（不超过50个字）" auto-height adjust-position cursor-spacing='20px'></textarea>
+        <button form-type='submit' type='primary'>确定</button>
+      </form>
+    </view>
+    <view wx:if="{{finished}}" class="op-result">
+      <text class="headline">操作结果信息：</text>
+      <text class='text-title'>{{opResult}}</text>
+      <text class="list" selectable>{{resData._id}}：{{resData.date}} {{resData.time}} {{resData.content}}</text>
+      <text class='text-title'>{{opResult2}}</text>
+      <text class="list" selectable>{{resData2}}</text>
+    </view>
+  </view>
+  <view wx:if="{{opName == 'qry'}}">
+    <!-- 查询记录 -->
+    <view class="record-op" style='{{opName!=""?"border: 1px solid #00007f":""}}'>
+      <form bindsubmit='doQuery'>
+        <text class="op-note">指定查询日期（年-月-日，不需要无效的0）：</text>
+        <input name="workDate" class="line-input" maxlength="10" placeholder="事件日期（年-月-日）" />
+        <button form-type='submit' type='primary'>确定</button>
+      </form>
+    </view>
+    <view wx:if="{{finished}}" class="op-result">
+      <text class="headline">操作结果信息：</text>
+      <text class='text-title'>{{opResult}}</text>
+      <block wx:for='{{resData}}' wx:key='{{item._id}}'>
+        <text class="list" selectable>{{item._id}}：{{item.date}} {{item.time}} {{item.content}}</text>
+      </block>
     </view>
   </view>
 </view>
