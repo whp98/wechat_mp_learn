@@ -1,9 +1,4 @@
-/* pages/API/NavigationBar/index.wxss */
-
-input {
-  border-bottom: 1px solid blue; /* 设置input组件下边框线1px，实线、蓝色 */
-  margin: 30rpx 20rpx; /* 设置上下外边距30rpx，左右外边距20rpx */
-}
+/* pages/index/index.wxss */
 
 .btnLayout {
   /* 设置button组件的布局 */

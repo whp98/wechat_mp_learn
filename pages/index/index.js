@@ -1,34 +1,103 @@
-// pages/API/NavigationBar/index.js
+// pages/index/index.js
 Page({
-  data: {
-    title: '' //初始化title
-  },
-  inputTitle: function(e) {
-    this.setData({
-      title: e.detail.value //将input组件的value值赋值给title
+  showTabBar:function(){
+    wx.showTabBar({
+      aniamtion: true,
+      success: function(res) {},
+      fail: function(res) {},
+      complete: function(res) {},
     })
   },
-  setNavigationBarTitle: function() {
-    let title = this.data.title;
-    wx.setNavigationBarTitle({ //设置导航栏标题文本
-      title: title //将局部变量title赋值给函数参数title（导航条标题）
+
+  hideTabBar:function(){
+    wx.hideTabBar({
+      aniamtion: true,
+      success: function(res) {},
+      fail: function(res) {},
+      complete: function(res) {},
     })
   },
-  
-  setNavigationBarColor: function() {
-    wx.setNavigationBarColor({ //设置导航条颜色
-      frontColor: '#ffffff', //前景色
-      backgroundColor: '#ff0000', //背景色
-      animation: {
-        duration: 4000, //动画时长
-        timingFunc: 'easeInOut' //动画方式
-      }
+
+  setTabBarBadge:function(){
+    wx.setTabBarBadge({
+      index: 3,
+      text: '10',
+      success: function(res) {},
+      fail: function(res) {},
+      complete: function(res) {},
     })
   },
-  showNavigationBarLoading: function() {
-    wx.showNavigationBarLoading() //显示加载动画
+
+  removeTabBarBadge:function(){
+    wx.removeTabBarBadge({
+      index: 3,
+      success: function(res) {},
+      fail: function(res) {},
+      complete: function(res) {},
+    })
   },
-  hideNavigationBarLoding: function() {
-    wx.hideNavigationBarLoading() //隐藏加载动画
-  }
+
+  showTabBarRedDot:function(){
+    wx.showTabBarRedDot({
+      index: 1,
+      success: function(res) {},
+      fail: function(res) {},
+      complete: function(res) {},
+    })
+  },
+
+  hideTabBarRedDot:function(){
+    wx.hideTabBarRedDot({
+      index: 1,
+      success: function(res) {},
+      fail: function(res) {},
+      complete: function(res) {},
+    })
+  },
+
+  setTabBarStyle:function(){
+    wx.setTabBarStyle({
+      color: '#ff0000',
+      selectedColor: '#0000ff',
+      backgroundColor: '#ffff00',
+      borderStyle: '',
+      success: function(res) {},
+      fail: function(res) {},
+      complete: function(res) {},
+    })
+  },
+
+  setTabBarItem:function(){
+    wx.setTabBarItem({
+      index: 4,
+      text: '云开发',
+      iconPath: '/images/cloud.png',
+      selectedIconPath: '/images/cloud-selected.png',
+      success: function(res) {},
+      fail: function(res) {},
+      complete: function(res) {},
+    })
+  },
+
+  reset:function(){
+    wx.setTabBarStyle({
+      color: '#000000',
+      selectedColor: '#00ff00',
+      backgroundColor: '#fff',
+      borderStyle: '',
+      success: function(res) {},
+      fail: function(res) {},
+      complete: function(res) {},
+    })
+    wx.setTabBarItem({
+      index: 4,
+      text: '关于我们',
+      iconPath: '/images/guanyu-off.png',
+      selectedIconPath: '/images/guanyu-on.png',
+      success: function(res) {},
+      fail: function(res) {},
+      complete: function(res) {},
+    })
+  },
+
 })

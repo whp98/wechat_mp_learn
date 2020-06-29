@@ -1,12 +1,24 @@
+<!--pages/index/index.wxml-->
 <view class='box'>
-  <view class='title'>导航条</view>
-  <input placeholder='请输入导航条新标题' bindblur='inputTitle'></input>
+  <view class='title'>TabBar设置</view>
   <view class='btnLayout'>
-    <button type='primary' bindtap='setNavigationBarTitle'>设置标题</button>
-    <button type='primary' bindtap='setNavigationBarColor'>设置颜色</button>
+    <button type='primary' bindtap='showTabBar'>显示标签</button>
+    <button type='primary' bindtap='hideTabBar'>隐藏标签</button>
   </view>
   <view class='btnLayout'>
-    <button type='primary' bindtap='showNavigationBarLoading'>加载动画</button>
-    <button type='primary' bindtap='hideNavigationBarLoding'>停止动画</button>
+    <button type='primary' bindtap='setTabBarBadge'>设置标记</button>
+    <button type='primary' bindtap='removeTabBarBadge'>删除标记</button>
   </view>
+  <view class='btnLayout'>
+    <button type='primary' bindtap='showTabBarRedDot'>显示红点</button>
+    <button type='primary' bindtap='hideTabBarRedDot'>隐藏红点</button>
+  </view>
+  <view class='btnLayout'>
+    <button type='primary' bindtap='setTabBarStyle'>设置整体样式</button>
+    <button type='primary' bindtap='setTabBarItem'>设置单项样式</button>
+  </view>
+  <button type='primary' bindtap='reset' style='width:95%;'>还原标签栏样式</button>
+
 </view>
+
+
